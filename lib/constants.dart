@@ -8,3 +8,5 @@ const kBackgroundGradient = LinearGradient(
     Color(0xFFE1F5FE), // Light Blue (Bottom)
   ],
 );
+
+const kSecColor = Color(0xfff7f7fc);
