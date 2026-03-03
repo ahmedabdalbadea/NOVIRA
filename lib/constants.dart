@@ -9,4 +9,12 @@ const kBackgroundGradient = LinearGradient(
   ],
 );
 
-const kPrimaryColor = Color(0xfff4f7fc);
+const kPrimaryColor = Colors.white70;
+const kButtonGradient = LinearGradient(
+  colors: [
+    Color(0xFF5CB6F2), // Light Blue
+    Color(0xFF8DE09C), // Light Green
+  ],
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+);
