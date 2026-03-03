@@ -7,6 +7,6 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(body: SafeArea(child: SplashViewBody()));
+    return const GradientScaffold(body: SafeArea(child: SplashViewBody()));
   }
 }

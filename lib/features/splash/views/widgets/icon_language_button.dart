@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novira_app/constants.dart';
 import 'package:novira_app/features/splash/views/widgets/language_menu_button.dart';
 
 class IconLanguageButton extends StatelessWidget {
@@ -12,7 +13,7 @@ class IconLanguageButton extends StatelessWidget {
         decoration: getDecoration(),
         child: Theme(
           data: changeSelectedColor(context),
-          child: LanguageMenuButton(),
+          child: const LanguageMenuButton(),
         ),
       ),
     );
@@ -21,15 +22,15 @@ class IconLanguageButton extends StatelessWidget {
   ThemeData changeSelectedColor(BuildContext context) {
     return Theme.of(context).copyWith(
       // The background color of the currently selected item
-      highlightColor: const Color(0xFFE0F2F1),
+      highlightColor: const Color(0xffe8f5fa),
       // The faint color seen when hovering over an item
-      hoverColor: const Color(0xFFE0F2F1).withValues(alpha: 0.5),
+      hoverColor: kPrimaryColor,
     );
   }
 
   BoxDecoration getDecoration() {
     return BoxDecoration(
-      color: Colors.white,
+      color: kPrimaryColor,
       borderRadius: BorderRadius.circular(50),
     );
   }

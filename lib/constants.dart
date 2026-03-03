@@ -9,4 +9,4 @@ const kBackgroundGradient = LinearGradient(
   ],
 );
 
-const kSecColor = Color(0xfff7f7fc);
+const kPrimaryColor = Color(0xfff4f7fc);
