@@ -9,25 +9,32 @@ class IconLanguageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: AlignmentGeometry.centerRight,
-      child: Container(
-        decoration: getDecoration(),
-        child: Theme(
-          data: changeSelectedColor(context),
-          child: const LanguageMenuButton(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: Container(
+          decoration: getDecoration(),
+          // Theme widget
+          // is used here to locally override the PopupMenu's behavior
+          child: Theme(
+            data: changeSelectedColor(context),
+            child: const LanguageMenuButton(),
+          ),
         ),
       ),
     );
   }
 
+  /// Customizes the look of the popup menu items when interacted with
   ThemeData changeSelectedColor(BuildContext context) {
     return Theme.of(context).copyWith(
-      // The background color of the currently selected item
+      // Changes the background color of the currently active/selected menu item
       highlightColor: const Color(0xffe8f5fa),
-      // The faint color seen when hovering over an item
+      // Changes the splash/overlay color when a user hovers or taps an item
       hoverColor: kPrimaryColor,
     );
   }
 
+  /// Defines the circular background style for the language icon
   BoxDecoration getDecoration() {
     return BoxDecoration(
       color: kPrimaryColor,

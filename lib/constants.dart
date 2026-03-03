@@ -18,3 +18,5 @@ const kButtonGradient = LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
 );
+
+const kDesTextColor = Colors.black54;

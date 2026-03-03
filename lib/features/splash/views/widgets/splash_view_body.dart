@@ -12,9 +12,12 @@ class SplashViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Icon button that drops down the language selection menu
+        // --- Top Bar Section ---
+        // Language selection dropdown button
         IconLanguageButton(),
+        const SizedBox(height: 6),
 
+        // --- Main Content Card ---
         Container(
           alignment: Alignment.center,
           width: MediaQuery.sizeOf(context).width * 0.90,
@@ -25,17 +28,24 @@ class SplashViewBody extends StatelessWidget {
           ),
           child: Column(
             children: [
+              // Logo image with fixed aspect ratio to prevent distortion
               AspectRatio(
                 aspectRatio: 4.5 / 1,
                 child: Image.asset(AssetsData.kLogo),
               ),
+
               const SizedBox(height: 12),
-              const Text(
+
+              // App Tagline
+              Text(
                 "New Journey, Inner Harmony",
-                style: Styles.textStyle14,
+                style: Styles.textStyle14.copyWith(color: kDesTextColor),
               ),
 
               const SizedBox(height: 28),
+
+              // --- User Engagement Section ---
+              // Primary headline question
               SizedBox(
                 width: MediaQuery.sizeOf(context).width * 0.6,
                 child: const Text(
@@ -46,16 +56,26 @@ class SplashViewBody extends StatelessWidget {
                 ),
               ),
 
+              // Motivational/Description subtext
               SizedBox(
                 width: MediaQuery.sizeOf(context).width * 0.66,
                 child: Text(
                   "Let's begin your journey toward better\n well-being. We'll personalize your\n experience.",
-                  style: Styles.textStyle14,
+                  style: Styles.textStyle14.copyWith(color: kDesTextColor),
                   maxLines: 3,
                   textAlign: TextAlign.center,
                 ),
               ),
 
+              const SizedBox(height: 28),
+
+              // --- Action Section ---
+              // Main CTA (Call to Action) button with gradient styling
+              CustomElevatedButton(
+                title: "Start Your Journey",
+                gradient: kButtonGradient,
+                onPressed: () {},
+              ),
             ],
           ),
         ),
