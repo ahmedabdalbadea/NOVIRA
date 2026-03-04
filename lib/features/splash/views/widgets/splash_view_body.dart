@@ -4,7 +4,8 @@ import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/splash/views/widgets/icon_language_button.dart';
-import 'package:novira_app/features/splash/views/widgets/list_view_mood_item.dart';
+import 'package:novira_app/features/splash/views/widgets/grid_view_mood_item.dart';
+import 'package:novira_app/features/splash/views/widgets/mood_selector_grid_view.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
@@ -58,12 +59,8 @@ class SplashViewBody extends StatelessWidget {
               ),
 
               const SizedBox(height: 28),
-
-              ListViewMoodItem(
-                moodImage: AssetsData.kMoodsImagesList[0],
-                mood: kMoodsList[0],
-              ),
-
+              // Select mood
+              MoodSelectorGridView(),
               const SizedBox(height: 12),
 
               // Motivational/Description subtext
