@@ -20,3 +20,5 @@ const kButtonGradient = LinearGradient(
 );
 
 const kDesTextColor = Colors.black54;
+
+const kMoodsList = ["Happy", "Calm", "Neutral", "Sad", "Anxious", "Overwhelmed"];
