@@ -4,6 +4,7 @@ import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/splash/views/widgets/icon_language_button.dart';
+import 'package:novira_app/features/splash/views/widgets/list_view_mood_item.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
@@ -55,6 +56,15 @@ class SplashViewBody extends StatelessWidget {
                   maxLines: 2,
                 ),
               ),
+
+              const SizedBox(height: 28),
+
+              ListViewMoodItem(
+                moodImage: AssetsData.kMoodsImagesList[0],
+                mood: kMoodsList[0],
+              ),
+
+              const SizedBox(height: 12),
 
               // Motivational/Description subtext
               SizedBox(
