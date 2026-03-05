@@ -10,7 +10,6 @@ class MoodSelectorGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.widthOf(context) * 0.72,
-      height: MediaQuery.heightOf(context) * 0.24,
 
       child: GridView.builder(
         shrinkWrap: true,
