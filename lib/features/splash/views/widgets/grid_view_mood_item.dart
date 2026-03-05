@@ -12,24 +12,21 @@ class GridViewMoodItem extends StatelessWidget {
   final String mood;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(18),
-        ),
-        color: Colors.white,
-        shadowColor: Colors.black.withValues(alpha: 0.04),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(moodImage),
-            Text(
-              mood,
-              style: Styles.textStyle12.copyWith(color: kDesTextColor),
-            ),
-          ],
-        ),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.circular(18),
+      ),
+      color: Colors.white,
+      shadowColor: Colors.black.withValues(alpha: 0.04),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(moodImage),
+          Text(
+            mood,
+            style: Styles.textStyle12.copyWith(color: kDesTextColor),
+          ),
+        ],
       ),
     );
   }
