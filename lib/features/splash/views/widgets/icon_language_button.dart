@@ -13,6 +13,7 @@ class IconLanguageButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Container(
           decoration: getDecoration(),
+
           // Theme widget
           // is used here to locally override the PopupMenu's behavior
           child: Theme(
@@ -28,9 +29,10 @@ class IconLanguageButton extends StatelessWidget {
   ThemeData changeSelectedColor(BuildContext context) {
     return Theme.of(context).copyWith(
       // Changes the background color of the currently active/selected menu item
-      highlightColor: const Color(0xffe8f5fa),
+      highlightColor: const Color(0xffe9f5f5),
+      cardColor: kPrimaryColor,
       // Changes the splash/overlay color when a user hovers or taps an item
-      hoverColor: kPrimaryColor,
+      hoverColor: const Color(0xffe8f5fa),
     );
   }
 
@@ -39,6 +41,13 @@ class IconLanguageButton extends StatelessWidget {
     return BoxDecoration(
       color: kPrimaryColor,
       borderRadius: BorderRadius.circular(50),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: 0.05),
+          blurRadius: 10,
+          spreadRadius: 1,
+        ),
+      ],
     );
   }
 }

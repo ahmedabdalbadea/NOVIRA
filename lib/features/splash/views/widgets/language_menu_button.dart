@@ -7,7 +7,7 @@ class LanguageMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      elevation: 3,
+      elevation: 4,
       shadowColor: Colors.black12,
       clipBehavior: Clip.antiAlias,
       menuPadding: EdgeInsets.zero,
@@ -25,10 +25,11 @@ class LanguageMenuButton extends StatelessWidget {
       value: "en",
       child: Text("English", style: Styles.textStyle12),
     ),
+
     PopupMenuItem(
       value: 'ar',
       child: Text(
-        "العربيه",
+        "العربية",
         style: Styles.textStyle12.copyWith(
           color: Colors.black.withValues(alpha: 0.7),
         ),
