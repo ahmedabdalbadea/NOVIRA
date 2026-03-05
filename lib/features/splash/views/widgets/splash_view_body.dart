@@ -4,7 +4,6 @@ import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/splash/views/widgets/icon_language_button.dart';
-import 'package:novira_app/features/splash/views/widgets/grid_view_mood_item.dart';
 import 'package:novira_app/features/splash/views/widgets/mood_selector_grid_view.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -25,6 +24,15 @@ class SplashViewBody extends StatelessWidget {
           width: MediaQuery.sizeOf(context).width * 0.90,
           padding: EdgeInsets.all(32),
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Color(
+                  0xFFE0E0E0,
+                ).withValues(alpha: 0.5), // Light grey shadow
+                blurRadius: 20,
+                offset: Offset(0, 8),
+              ),
+            ],
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(24),
           ),
@@ -82,6 +90,15 @@ class SplashViewBody extends StatelessWidget {
                 title: "Start Your Journey",
                 gradient: kButtonGradient,
                 onPressed: () {},
+              ),
+
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  "I already have an account",
+                  style: Styles.textStyle14.copyWith(color: kDesTextColor),
+                ),
               ),
             ],
           ),
