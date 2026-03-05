@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
-import 'package:novira_app/features/splash/views/widgets/language_menu_button.dart';
+import 'package:novira_app/features/splash/views/widgets/icon_language_button_menu.dart';
 
 class IconLanguageButton extends StatelessWidget {
   const IconLanguageButton({super.key});
@@ -12,42 +12,39 @@ class IconLanguageButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Container(
-          decoration: getDecoration(),
-
-          // Theme widget
-          // is used here to locally override the PopupMenu's behavior
+          decoration: _buildDecoration(),
           child: Theme(
-            data: changeSelectedColor(context),
-            child: const LanguageMenuButton(),
+            data: _changeSelectedColor(context),
+            child: const IconLanguageButtonMenu(),
           ),
         ),
       ),
     );
   }
 
-  /// Customizes the look of the popup menu items when interacted with
-  ThemeData changeSelectedColor(BuildContext context) {
+  ThemeData _changeSelectedColor(BuildContext context) {
     return Theme.of(context).copyWith(
-      // Changes the background color of the currently active/selected menu item
       highlightColor: const Color(0xffe9f5f5),
       cardColor: kPrimaryColor,
-      // Changes the splash/overlay color when a user hovers or taps an item
       hoverColor: const Color(0xffe8f5fa),
     );
   }
 
-  /// Defines the circular background style for the language icon
-  BoxDecoration getDecoration() {
+  BoxDecoration _buildDecoration() {
     return BoxDecoration(
       color: kPrimaryColor,
       borderRadius: BorderRadius.circular(50),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withValues(alpha: 0.05),
-          blurRadius: 10,
-          spreadRadius: 1,
-        ),
-      ],
+      boxShadow: _shadows,
     );
+  }
+
+  List<BoxShadow> get _shadows {
+    return [
+      BoxShadow(
+        color: Colors.black.withValues(alpha: 0.05),
+        blurRadius: 10,
+        spreadRadius: 1,
+      ),
+    ];
   }
 }

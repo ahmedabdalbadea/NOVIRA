@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
-class LanguageMenuButton extends StatelessWidget {
-  const LanguageMenuButton({super.key});
+class IconLanguageButtonMenu extends StatelessWidget {
+  const IconLanguageButtonMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +11,15 @@ class LanguageMenuButton extends StatelessWidget {
       shadowColor: Colors.black12,
       clipBehavior: Clip.antiAlias,
       menuPadding: EdgeInsets.zero,
-      // Positions the menu (x, y) relative to the icon
       offset: const Offset(0, 55),
       initialValue: "en",
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       icon: Icon(Icons.language, color: Colors.grey),
-      itemBuilder: languages,
+      itemBuilder: _languages,
     );
   }
 
-  List<PopupMenuEntry<String>> languages(BuildContext context) => [
+  List<PopupMenuEntry<String>> _languages(BuildContext context) => [
     PopupMenuItem(
       value: "en",
       child: Text("English", style: Styles.textStyle12),
