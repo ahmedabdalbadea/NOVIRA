@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/features/splash/views/widgets/mood_selector_grid_view.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class OnboardingCardMoodCheckIn extends StatelessWidget {
   const OnboardingCardMoodCheckIn({super.key});
@@ -11,8 +12,8 @@ class OnboardingCardMoodCheckIn extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.6,
-          child: const Text(
-            "How are you feeling today?",
+          child: Text(
+            S.of(context).howAreYouFeeling,
             style: Styles.textStyle24,
             textAlign: TextAlign.center,
             maxLines: 2,

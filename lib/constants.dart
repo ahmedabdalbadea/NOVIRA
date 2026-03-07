@@ -5,21 +5,19 @@ const kPrimaryGradientColors = [
   Color(0xFFE1F5FE), // Light Blue (Bottom)
 ];
 
-
 const kPrimaryColor = Colors.white70;
 const kSecGradientColors = [
   Color(0xFF5CB6F2), // Light Blue
   Color(0xFF8DE09C), // Light Green
 ];
 
-
 const kDesTextColor = Colors.black54;
 
 const kMoodsList = [
-  "Happy",
-  "Calm",
-  "Neutral",
-  "Sad",
-  "Anxious",
-  "Overwhelmed",
+  "happyMood",
+  "calmMood",
+  "neutralMood",
+  "sadMood",
+  "anxiousMood",
+  "overwhelmedMood",
 ];

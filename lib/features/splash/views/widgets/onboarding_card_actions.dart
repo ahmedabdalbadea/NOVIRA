@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class OnboardingCardActions extends StatelessWidget {
   const OnboardingCardActions({super.key});
@@ -13,7 +14,7 @@ class OnboardingCardActions extends StatelessWidget {
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.66,
           child: Text(
-            "Let's begin your journey toward better\n well-being. We'll personalize your\n experience.",
+            S.of(context).onboardingDescription,
             style: Styles.textStyle14.copyWith(color: kDesTextColor),
             maxLines: 3,
             textAlign: TextAlign.center,
@@ -23,7 +24,7 @@ class OnboardingCardActions extends StatelessWidget {
         const SizedBox(height: 28),
 
         CustomElevatedButton(
-          title: "Start Your Journey",
+          title: S.of(context).startYourJourney,
           gradientColors: kSecGradientColors,
           onPressed: () {},
         ),
@@ -32,7 +33,7 @@ class OnboardingCardActions extends StatelessWidget {
         GestureDetector(
           onTap: () {},
           child: Text(
-            "I already have an account",
+            S.of(context).alreadyHaveAccount,
             style: Styles.textStyle14.copyWith(color: kDesTextColor),
           ),
         ),
