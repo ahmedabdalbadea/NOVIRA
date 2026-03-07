@@ -3,8 +3,15 @@ import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/features/splash/views/widgets/grid_view_mood_item.dart';
 
-class MoodSelectorGridView extends StatelessWidget {
+class MoodSelectorGridView extends StatefulWidget {
   const MoodSelectorGridView({super.key});
+
+  @override
+  State<MoodSelectorGridView> createState() => _MoodSelectorGridViewState();
+}
+
+class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
+  int itemSelected = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +27,17 @@ class MoodSelectorGridView extends StatelessWidget {
           crossAxisSpacing: 3,
           mainAxisSpacing: 5,
         ),
-        itemBuilder: (context, index) => GridViewMoodItem(
-          moodImage: AssetsData.kMoodsImagesList[index],
-          mood: kMoodsList[index],
+        itemBuilder: (context, index) => GestureDetector(
+          onTap: () {
+            setState(() {
+              itemSelected = index;
+            });
+          },
+          child: GridViewMoodItem(
+            moodImage: AssetsData.kMoodsImagesList[index],
+            mood: kMoodsList[index],
+            isSelected: index == itemSelected,
+          ),
         ),
       ),
     );

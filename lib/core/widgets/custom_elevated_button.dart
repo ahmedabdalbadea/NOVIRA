@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:novira_app/core/utils/styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
-    this.gradient,
+    required this.gradientColors,
     required this.title,
     this.onPressed,
   });
-  final Gradient? gradient;
+  final List<Color> gradientColors;
   final String title;
   final void Function()? onPressed;
   @override
@@ -19,7 +20,11 @@ class CustomElevatedButton extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width * 0.7,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        gradient: gradient,
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: gradientColors,
+        ),
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

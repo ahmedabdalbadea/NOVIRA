@@ -24,7 +24,7 @@ class OnboardingCardActions extends StatelessWidget {
 
         CustomElevatedButton(
           title: "Start Your Journey",
-          gradient: kButtonGradient,
+          gradientColors: kSecGradientColors,
           onPressed: () {},
         ),
 
