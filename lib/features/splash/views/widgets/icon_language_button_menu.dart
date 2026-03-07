@@ -8,13 +8,17 @@ class IconLanguageButtonMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LanguageProvider languageProvider = Provider.of<LanguageProvider>(context);
     return PopupMenuButton(
+      onSelected: (value) {
+        languageProvider.language = value;
+      },
       elevation: 4,
       shadowColor: Colors.black12,
       clipBehavior: Clip.antiAlias,
       menuPadding: EdgeInsets.zero,
       offset: const Offset(0, 55),
-      initialValue: Provider.of<LanguageProvider>(context).language,
+      initialValue: languageProvider.language,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       icon: Icon(Icons.language, color: Colors.grey),
       itemBuilder: _languages,

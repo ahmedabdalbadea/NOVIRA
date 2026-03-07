@@ -5,7 +5,7 @@ class LanguageProvider extends ChangeNotifier {
 
   String get language => _language;
 
-  set changLanguage(String language) {
+  set language(String language) {
     _language = language;
     notifyListeners();
   }
