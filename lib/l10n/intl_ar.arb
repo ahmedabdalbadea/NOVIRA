@@ -1,0 +1,16 @@
+{
+    "@@locale": "ar",
+    "appName": "نوفيرا",
+    "appTagline": "رحلة جديدة، تناغم داخلي",
+    "howAreYouFeeling": "كيف تشعر اليوم؟",
+    "happyMood": "سعيد",
+    "calmMood": "هادئ",
+    "neutralMood": "عادي",
+    "sadMood": "حزين",
+    "anxiousMood": "قلق",
+    "overwhelmedMood": "مُثقل",
+    "onboardingDescription": "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
+    "startYourJourney": "ابدأ رحلتك",
+    "alreadyHaveAccount": "لدي حساب بالفعل",
+    "pleaseSelectMood": "من فضلك! اختر حالتك المزاجية للبدء"
+}
