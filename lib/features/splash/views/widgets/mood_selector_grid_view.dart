@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/assets_data.dart';
+import 'package:novira_app/features/splash/manager/mood_provider/mood_provider.dart';
 import 'package:novira_app/features/splash/views/widgets/grid_view_mood_item.dart';
+import 'package:provider/provider.dart';
 
 class MoodSelectorGridView extends StatefulWidget {
   const MoodSelectorGridView({super.key});
@@ -15,6 +17,7 @@ class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
 
   @override
   Widget build(BuildContext context) {
+    final MoodProvider moodProvider = Provider.of<MoodProvider>(context);
     return SizedBox(
       width: MediaQuery.widthOf(context) * 0.72,
 
@@ -30,13 +33,13 @@ class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
             setState(() {
-              itemSelected = index;
+              moodProvider.selectMood(index, kMoodsList[index]);
             });
           },
           child: GridViewMoodItem(
             moodImage: AssetsData.kMoodsImagesList[index],
             mood: kMoodsList[index],
-            isSelected: index == itemSelected,
+            isSelected: index == moodProvider.selectedItemIndex,
           ),
         ),
       ),
