@@ -39,6 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Let\'s begin your journey toward better\n well-being. We\'ll personalize your\n experience.",
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("Overwhelmed"),
+    "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
+      "Please! Select Your Mood to Start",
+    ),
     "sadMood": MessageLookupByLibrary.simpleMessage("Sad"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage(
       "Start Your Journey",

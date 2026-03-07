@@ -10,5 +10,6 @@
     "overwhelmedMood": "Overwhelmed",
     "onboardingDescription": "Let's begin your journey toward better\n well-being. We'll personalize your\n experience.",
     "startYourJourney": "Start Your Journey",
-    "alreadyHaveAccount": "I already have an account"
+    "alreadyHaveAccount": "I already have an account",
+    "pleaseSelectMood": "Please! Select Your Mood to Start"
 }

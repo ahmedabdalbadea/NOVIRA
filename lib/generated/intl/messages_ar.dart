@@ -37,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("مُثقل"),
+    "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
+      "من فضلك! اختر حالتك المزاجية للبدء",
+    ),
     "sadMood": MessageLookupByLibrary.simpleMessage("حزين"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage("ابدأ رحلتك"),
   };

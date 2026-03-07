@@ -138,6 +138,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please! Select Your Mood to Start`
+  String get pleaseSelectMood {
+    return Intl.message(
+      'Please! Select Your Mood to Start',
+      name: 'pleaseSelectMood',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
