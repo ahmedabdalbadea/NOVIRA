@@ -37,7 +37,7 @@ class OnboardingCardActions extends StatelessWidget {
               listen: false,
             ).selectedMood;
             if (mood?.isEmpty ?? true) {
-              showSnackBarError(context, S.of(context).pleaseSelectMood);
+              showSnackBar(context, S.of(context).pleaseSelectMood);
             } else {
               GoRouter.of(context).push(AppRouter.kSignUpView, extra: mood);
             }

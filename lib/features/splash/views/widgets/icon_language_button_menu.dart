@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
-import 'package:novira_app/features/splash/manager/language_provider.dart/language_provider.dart';
+import 'package:novira_app/core/providers/language_provider/language_provider.dart';
 import 'package:provider/provider.dart';
 
 class IconLanguageButtonMenu extends StatelessWidget {

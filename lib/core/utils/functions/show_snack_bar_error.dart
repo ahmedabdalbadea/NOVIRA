@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBarError(
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
   BuildContext context,
   String title,
 ) {
@@ -14,7 +14,7 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBarError(
       backgroundColor: Colors.redAccent,
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
     ),
   );
 }
