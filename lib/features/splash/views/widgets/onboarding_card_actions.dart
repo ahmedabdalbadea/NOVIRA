@@ -32,21 +32,15 @@ class OnboardingCardActions extends StatelessWidget {
           title: S.of(context).startYourJourney,
           gradientColors: kSecGradientColors,
           onPressed: () {
-            String? mood = Provider.of<MoodProvider>(
-              context,
-              listen: false,
-            ).selectedMood;
-            if (mood?.isEmpty ?? true) {
-              showSnackBar(context, S.of(context).pleaseSelectMood);
-            } else {
-              GoRouter.of(context).push(AppRouter.kSignUpView, extra: mood);
-            }
+            checkMoodAndNavigate(context, AppRouter.kSignUpView);
           },
         ),
 
         const SizedBox(height: 16),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            checkMoodAndNavigate(context, AppRouter.kLogInView);
+          },
           child: Text(
             S.of(context).alreadyHaveAccount,
             style: Styles.textStyle14.copyWith(color: kDesTextColor),
@@ -54,5 +48,17 @@ class OnboardingCardActions extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void checkMoodAndNavigate(BuildContext context, String location) {
+    String? mood = Provider.of<MoodProvider>(
+      context,
+      listen: false,
+    ).selectedMood;
+    if (mood == null) {
+      showSnackBarError(context, S.of(context).pleaseSelectMood);
+    } else {
+      GoRouter.of(context).push(location, extra: mood);
+    }
   }
 }
