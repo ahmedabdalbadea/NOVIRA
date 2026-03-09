@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBarError(
   BuildContext context,
   String title,
 ) {
