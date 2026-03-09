@@ -3,12 +3,10 @@ import 'package:novira_app/core/widgets/gradient_scaffold.dart';
 import 'package:novira_app/features/auth/views/widgets/log_in_view_body.dart';
 
 class LogInView extends StatelessWidget {
-  const LogInView({super.key});
-
+  const LogInView({super.key, required this.mood});
+  final String mood;
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
-      body: SafeArea(child: LogInViewBody()),
-    );
+    return GradientScaffold(body: SafeArea(child: LogInViewBody()));
   }
 }
