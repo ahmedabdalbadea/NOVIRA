@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:novira_app/constants.dart';
 import 'package:novira_app/features/splash/manager/mood_provider/mood_provider.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_actions.dart';

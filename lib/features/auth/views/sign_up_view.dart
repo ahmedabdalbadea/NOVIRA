@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novira_app/core/widgets/gradient_scaffold.dart';
 import 'package:novira_app/features/auth/views/widgets/sign_up_view_body.dart';
 
 class SignUpView extends StatelessWidget {
@@ -6,6 +7,8 @@ class SignUpView extends StatelessWidget {
   final String mood;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SignUpViewBody(mood: mood));
+    return GradientScaffold(
+      body: SafeArea(child: SignUpViewBody(mood: mood)),
+    );
   }
 }
