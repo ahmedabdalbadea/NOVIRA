@@ -4,6 +4,7 @@ import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
 import 'package:novira_app/core/widgets/custom_text_field.dart';
+import 'package:novira_app/features/auth/views/widgets/user_input.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/generated/l10n.dart';
 
@@ -14,24 +15,32 @@ class SignUpViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingCardBody(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const CustomLogo(),
           const SizedBox(height: 8),
-          Align(
-            alignment: AlignmentGeometry.center,
-            child: Text(
-              S.of(context).createYourSafeSpace,
-              style: Styles.textStyle24,
-            ),
+          Text(S.of(context).createYourSafeSpace, style: Styles.textStyle24),
+          const SizedBox(height: 24),
+          UserInput(
+            lable: S.of(context).fullName,
+            hintText: S.of(context).enterFullName,
           ),
           const SizedBox(height: 16),
-          Text(
-            "Full Name",
-            style: Styles.textStyle14.copyWith(color: kDesTextColor),
+          UserInput(
+            lable: S.of(context).email,
+            hintText: S.of(context).emailHint,
           ),
-          const SizedBox(height: 8),
-          CustomTextField(hintText: S.of(context).enterFullName),
+          const SizedBox(height: 16),
+          UserInput(
+            lable: S.of(context).password,
+            hintText: S.of(context).createPassword,
+          ),
+          const SizedBox(height: 16),
+          UserInput(
+            lable: S.of(context).confirmPassword,
+            hintText: S.of(context).confirmPasswordHint,
+          ),
+          const SizedBox(height: 16),
         ],
       ),
     );
