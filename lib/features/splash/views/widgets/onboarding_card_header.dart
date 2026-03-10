@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/core/widgets/custom_logo.dart';
 import 'package:novira_app/generated/l10n.dart';
 
 class OnboardingCardHeader extends StatelessWidget {
@@ -11,7 +12,7 @@ class OnboardingCardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AspectRatio(aspectRatio: 4.5 / 1, child: Image.asset(AssetsData.kLogo)),
+        CustomLogo(),
 
         const SizedBox(height: 12),
 
