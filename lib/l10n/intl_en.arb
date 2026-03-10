@@ -11,5 +11,17 @@
     "onboardingDescription": "Let's begin your journey toward better\n well-being. We'll personalize your\n experience.",
     "startYourJourney": "Start Your Journey",
     "alreadyHaveAccount": "I already have an account",
-    "pleaseSelectMood": "Please! Select Your Mood to Start"
+    "pleaseSelectMood": "Please! Select Your Mood to Start",
+    "createYourSafeSpace": "Create Your Safe Space",
+    "fullName": "Full Name",
+    "enterFullName": "Enter your full name",
+    "email": "Email",
+    "emailHint": "your.email@example.com",
+    "password": "Password",
+    "createPassword": "Create a secure password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordHint": "Confirm your password",
+    "createAccount": "Create Account",
+    "alreadyHaveAccountToLogin": "Already have an account? Login",
+    "termsAndPrivacy": "By creating an account, you agree to our Terms & Privacy Policy"
 }

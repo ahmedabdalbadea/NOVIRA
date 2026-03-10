@@ -25,11 +25,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "I already have an account",
     ),
+    "alreadyHaveAccountToLogin": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? Login",
+    ),
     "anxiousMood": MessageLookupByLibrary.simpleMessage("Anxious"),
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "New Journey, Inner Harmony",
     ),
     "calmMood": MessageLookupByLibrary.simpleMessage("Calm"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
+      "Confirm your password",
+    ),
+    "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "createPassword": MessageLookupByLibrary.simpleMessage(
+      "Create a secure password",
+    ),
+    "createYourSafeSpace": MessageLookupByLibrary.simpleMessage(
+      "Create Your Safe Space",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailHint": MessageLookupByLibrary.simpleMessage("your.email@example.com"),
+    "enterFullName": MessageLookupByLibrary.simpleMessage(
+      "Enter your full name",
+    ),
+    "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "happyMood": MessageLookupByLibrary.simpleMessage("Happy"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage(
       "How are you feeling today?",
@@ -39,12 +59,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Let\'s begin your journey toward better\n well-being. We\'ll personalize your\n experience.",
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("Overwhelmed"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "Please! Select Your Mood to Start",
     ),
     "sadMood": MessageLookupByLibrary.simpleMessage("Sad"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage(
       "Start Your Journey",
+    ),
+    "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "By creating an account, you agree to our Terms & Privacy Policy",
     ),
   };
 }

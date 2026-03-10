@@ -12,5 +12,17 @@
     "onboardingDescription": "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     "startYourJourney": "ابدأ رحلتك",
     "alreadyHaveAccount": "لدي حساب بالفعل",
-    "pleaseSelectMood": "من فضلك! اختر حالتك المزاجية للبدء"
+    "pleaseSelectMood": "من فضلك! اختر حالتك المزاجية للبدء",
+    "createYourSafeSpace": "أنشئ مساحتك الآمنة",
+    "fullName": "الاسم بالكامل",
+    "enterFullName": "أدخل اسمك بالكامل",
+    "email": "البريد الإلكتروني",
+    "emailHint": "your.email@example.com",
+    "password": "كلمة المرور",
+    "createPassword": "أنشئ كلمة مرور آمنة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordHint": "أعد كتابة كلمة المرور",
+    "createAccount": "إنشاء حساب",
+    "alreadyHaveAccountToLogin": "لديك حساب بالفعل؟ تسجيل الدخول",
+    "termsAndPrivacy": "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا"
 }

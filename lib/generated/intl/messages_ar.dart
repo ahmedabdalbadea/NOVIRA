@@ -25,11 +25,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لدي حساب بالفعل",
     ),
+    "alreadyHaveAccountToLogin": MessageLookupByLibrary.simpleMessage(
+      "لديك حساب بالفعل؟ تسجيل الدخول",
+    ),
     "anxiousMood": MessageLookupByLibrary.simpleMessage("قلق"),
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "رحلة جديدة، تناغم داخلي",
     ),
     "calmMood": MessageLookupByLibrary.simpleMessage("هادئ"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
+      "أعد كتابة كلمة المرور",
+    ),
+    "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "createPassword": MessageLookupByLibrary.simpleMessage(
+      "أنشئ كلمة مرور آمنة",
+    ),
+    "createYourSafeSpace": MessageLookupByLibrary.simpleMessage(
+      "أنشئ مساحتك الآمنة",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailHint": MessageLookupByLibrary.simpleMessage("your.email@example.com"),
+    "enterFullName": MessageLookupByLibrary.simpleMessage("أدخل اسمك بالكامل"),
+    "fullName": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "happyMood": MessageLookupByLibrary.simpleMessage("سعيد"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage("كيف تشعر اليوم؟"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("عادي"),
@@ -37,10 +57,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("مُثقل"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "من فضلك! اختر حالتك المزاجية للبدء",
     ),
     "sadMood": MessageLookupByLibrary.simpleMessage("حزين"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage("ابدأ رحلتك"),
+    "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا",
+    ),
   };
 }

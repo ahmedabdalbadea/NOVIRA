@@ -148,6 +148,111 @@ class S {
       args: [],
     );
   }
+
+  /// `Create Your Safe Space`
+  String get createYourSafeSpace {
+    return Intl.message(
+      'Create Your Safe Space',
+      name: 'createYourSafeSpace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message('Full Name', name: 'fullName', desc: '', args: []);
+  }
+
+  /// `Enter your full name`
+  String get enterFullName {
+    return Intl.message(
+      'Enter your full name',
+      name: 'enterFullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `your.email@example.com`
+  String get emailHint {
+    return Intl.message(
+      'your.email@example.com',
+      name: 'emailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Create a secure password`
+  String get createPassword {
+    return Intl.message(
+      'Create a secure password',
+      name: 'createPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm your password`
+  String get confirmPasswordHint {
+    return Intl.message(
+      'Confirm your password',
+      name: 'confirmPasswordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get createAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? Login`
+  String get alreadyHaveAccountToLogin {
+    return Intl.message(
+      'Already have an account? Login',
+      name: 'alreadyHaveAccountToLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By creating an account, you agree to our Terms & Privacy Policy`
+  String get termsAndPrivacy {
+    return Intl.message(
+      'By creating an account, you agree to our Terms & Privacy Policy',
+      name: 'termsAndPrivacy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
