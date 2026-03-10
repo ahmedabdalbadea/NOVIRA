@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
-import 'package:novira_app/core/widgets/custom_text_field.dart';
 import 'package:novira_app/features/auth/views/widgets/user_input.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/generated/l10n.dart';
@@ -40,7 +39,12 @@ class SignUpViewBody extends StatelessWidget {
             lable: S.of(context).confirmPassword,
             hintText: S.of(context).confirmPasswordHint,
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
+
+          CustomElevatedButton(
+            gradientColors: kSecGradientColors,
+            title: S.of(context).createAccount,
+          ),
         ],
       ),
     );
