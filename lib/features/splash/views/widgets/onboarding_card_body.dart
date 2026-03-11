@@ -6,14 +6,12 @@ class OnboardingCardBody extends StatelessWidget {
   final Widget body;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        alignment: Alignment.center,
-        width: MediaQuery.sizeOf(context).width * 0.90,
-        padding: EdgeInsets.all(32),
-        decoration: _buildDecoration(),
-        child: body,
-      ),
+    return Container(
+      alignment: Alignment.center,
+      width: MediaQuery.sizeOf(context).width * 0.90,
+      padding: EdgeInsets.all(32),
+      decoration: _buildDecoration(),
+      child: body,
     );
   }
 

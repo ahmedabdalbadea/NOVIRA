@@ -37,7 +37,7 @@ class UserInputsSection extends StatelessWidget {
           suffixIcon: Icons.visibility_outlined,
         ),
         const SizedBox(height: 24),
-
+    
         CustomElevatedButton(
           gradientColors: kSecGradientColors,
           title: S.of(context).createAccount,

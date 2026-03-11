@@ -11,18 +11,28 @@ class SignUpViewBody extends StatelessWidget {
   final String mood;
   @override
   Widget build(BuildContext context) {
-    return OnboardingCardBody(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const CustomLogo(),
-          const SizedBox(height: 8),
-          Text(S.of(context).createYourSafeSpace, style: Styles.textStyle24),
-          const SizedBox(height: 24),
-          UserInputsSection(),
-          const SizedBox(height: 24),
-          NavigateToLogInSection(mood: mood),
-        ],
+    return Center(
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(
+          parent: BouncingScrollPhysics(),
+        ),
+        child: OnboardingCardBody(
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CustomLogo(),
+              const SizedBox(height: 8),
+              Text(
+                S.of(context).createYourSafeSpace,
+                style: Styles.textStyle24,
+              ),
+              const SizedBox(height: 24),
+              UserInputsSection(),
+              const SizedBox(height: 24),
+              NavigateToLogInSection(mood: mood),
+            ],
+          ),
+        ),
       ),
     );
   }
