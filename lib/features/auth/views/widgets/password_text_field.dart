@@ -1,19 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, this.prefixIcon, required this.hintText});
+class PasswordTextField extends StatefulWidget {
+  const PasswordTextField({
+    super.key,
+    this.prefixIcon,
+    required this.hintText,
+    this.suffixIcon,
+  });
   final IconData? prefixIcon;
   final String hintText;
+  final IconData? suffixIcon;
 
   @override
+  State<PasswordTextField> createState() => _PasswordTextFieldState();
+}
+
+class _PasswordTextFieldState extends State<PasswordTextField> {
+  bool hidden = true;
+  @override
   Widget build(BuildContext context) {
-    return TextField(decoration: _getInputDecoration());
+    return TextField(obscureText: hidden, decoration: _getInputDecoration());
   }
 
   InputDecoration _getInputDecoration() {
     return InputDecoration(
-      prefixIcon: Icon(prefixIcon, color: Colors.grey[400]),
+      prefixIcon: Icon(widget.prefixIcon, color: Colors.grey[400]),
+      suffixIcon: IconButton(
+        onPressed: () {
+          hidden = hidden ? false : true;
+          setState(() {});
+        },
+        icon: Icon(
+          hidden ? widget.suffixIcon : Icons.visibility_off_outlined,
+          color: Colors.grey[400],
+        ),
+      ),
       filled: true,
       border: _buildBorder(),
       enabledBorder: _buildBorder(),
@@ -21,7 +43,7 @@ class CustomTextField extends StatelessWidget {
         borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2),
       ),
       fillColor: Colors.white,
-      hintText: hintText,
+      hintText: widget.hintText,
       hintStyle: _getHintStyle(),
       contentPadding: EdgeInsets.only(top: 14, bottom: 14, left: 48, right: 16),
     );

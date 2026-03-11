@@ -13,9 +13,7 @@ class SignUpViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(
-          parent: BouncingScrollPhysics(),
-        ),
+        physics: PageScrollPhysics(parent: BouncingScrollPhysics()),
         child: OnboardingCardBody(
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

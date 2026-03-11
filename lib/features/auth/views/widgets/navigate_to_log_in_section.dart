@@ -19,7 +19,7 @@ class NavigateToLogInSection extends StatelessWidget {
           S.of(context).alreadyHaveAccount,
           style: Styles.textStyle14.copyWith(color: kDesTextColor),
         ),
-        Text("? ", style: Styles.textStyle14.copyWith(color: kDesTextColor)),
+        Text(" "),
         GestureDetector(
           onTap: () {
             GoRouter.of(context).push(AppRouter.kLogInView, extra: mood);
