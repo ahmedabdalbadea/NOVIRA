@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hintText, this.suffixIcon});
+  const CustomTextField({
+    super.key,
+    this.prefixIcon,
+    required this.hintText,
+    this.suffixIcon,
+  });
+  final IconData? prefixIcon;
   final String hintText;
   final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
+        prefixIcon: Icon(prefixIcon, color: Colors.grey[400]),
         suffixIcon: suffixIcon,
         filled: true,
         border: _buildBorder(),

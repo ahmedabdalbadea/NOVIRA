@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
@@ -22,20 +23,24 @@ class SignUpViewBody extends StatelessWidget {
           const SizedBox(height: 24),
           UserInput(
             lable: S.of(context).fullName,
+            prefixIcon: Icons.person_outline,
             hintText: S.of(context).enterFullName,
           ),
           const SizedBox(height: 16),
           UserInput(
+            prefixIcon: Icons.email_outlined,
             lable: S.of(context).email,
             hintText: S.of(context).emailHint,
           ),
           const SizedBox(height: 16),
           UserInput(
+            prefixIcon: Icons.lock_outline,
             lable: S.of(context).password,
             hintText: S.of(context).createPassword,
           ),
           const SizedBox(height: 16),
           UserInput(
+            prefixIcon: Icons.lock_outline,
             lable: S.of(context).confirmPassword,
             hintText: S.of(context).confirmPasswordHint,
           ),

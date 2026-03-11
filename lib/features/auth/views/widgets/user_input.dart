@@ -7,10 +7,12 @@ class UserInput extends StatelessWidget {
   const UserInput({
     super.key,
     required this.lable,
+    this.prefixIcon,
     required this.hintText,
     this.suffixIcon,
   });
   final String lable;
+  final IconData? prefixIcon;
   final String hintText;
   final Widget? suffixIcon;
   @override
@@ -20,7 +22,11 @@ class UserInput extends StatelessWidget {
       children: [
         Text(lable, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
         const SizedBox(height: 8),
-        CustomTextField(hintText: hintText, suffixIcon: suffixIcon),
+        CustomTextField(
+          prefixIcon: prefixIcon,
+          hintText: hintText,
+          suffixIcon: suffixIcon,
+        ),
       ],
     );
   }
