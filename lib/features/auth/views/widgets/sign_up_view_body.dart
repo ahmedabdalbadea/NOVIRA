@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
@@ -50,6 +52,31 @@ class SignUpViewBody extends StatelessWidget {
           CustomElevatedButton(
             gradientColors: kSecGradientColors,
             title: S.of(context).createAccount,
+          ),
+
+          const SizedBox(height: 24),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                S.of(context).alreadyHaveAccount,
+                style: Styles.textStyle14.copyWith(color: kDesTextColor),
+              ),
+              Text(
+                "? ",
+                style: Styles.textStyle14.copyWith(color: kDesTextColor),
+              ),
+              GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kLogInView, extra: mood);
+                },
+                child: Text(
+                  S.of(context).login,
+                  style: Styles.textStyle16.copyWith(color: kDesTextColor),
+                ),
+              ),
+            ],
           ),
         ],
       ),
