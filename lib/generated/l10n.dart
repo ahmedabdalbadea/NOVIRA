@@ -54,6 +54,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Novira`
+  String get appName {
+    return Intl.message('Novira', name: 'appName', desc: '', args: []);
+  }
+
   /// `New Journey, Inner Harmony`
   String get appTagline {
     return Intl.message(
@@ -109,10 +114,10 @@ class S {
     );
   }
 
-  /// `Let's begin your journey toward better\n well-being. We'll personalize your\n experience.`
+  /// `Let's begin your journey toward better\nwell-being. We'll personalize your\nexperience.`
   String get onboardingDescription {
     return Intl.message(
-      'Let\'s begin your journey toward better\n well-being. We\'ll personalize your\n experience.',
+      'Let\'s begin your journey toward better\nwell-being. We\'ll personalize your\nexperience.',
       name: 'onboardingDescription',
       desc: '',
       args: [],
@@ -129,10 +134,10 @@ class S {
     );
   }
 
-  /// `I already have an account`
+  /// `I already have an account?`
   String get alreadyHaveAccount {
     return Intl.message(
-      'I already have an account',
+      'I already have an account?',
       name: 'alreadyHaveAccount',
       desc: '',
       args: [],
@@ -234,14 +239,9 @@ class S {
     );
   }
 
-  /// `Already have an account? Login`
-  String get alreadyHaveAccountToLogin {
-    return Intl.message(
-      'Already have an account? Login',
-      name: 'alreadyHaveAccountToLogin',
-      desc: '',
-      args: [],
-    );
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
   }
 
   /// `By creating an account, you agree to our Terms & Privacy Policy`

@@ -1,5 +1,6 @@
 {
     "@@locale": "en",
+    "appName": "Novira",
     "appTagline": "New Journey, Inner Harmony",
     "howAreYouFeeling": "How are you feeling today?",
     "happyMood": "Happy",
@@ -8,9 +9,9 @@
     "sadMood": "Sad",
     "anxiousMood": "Anxious",
     "overwhelmedMood": "Overwhelmed",
-    "onboardingDescription": "Let's begin your journey toward better\n well-being. We'll personalize your\n experience.",
+    "onboardingDescription": "Let's begin your journey toward better\nwell-being. We'll personalize your\nexperience.",
     "startYourJourney": "Start Your Journey",
-    "alreadyHaveAccount": "I already have an account",
+    "alreadyHaveAccount": "I already have an account?",
     "pleaseSelectMood": "Please! Select Your Mood to Start",
     "createYourSafeSpace": "Create Your Safe Space",
     "fullName": "Full Name",
@@ -22,6 +23,6 @@
     "confirmPassword": "Confirm Password",
     "confirmPasswordHint": "Confirm your password",
     "createAccount": "Create Account",
-    "alreadyHaveAccountToLogin": "Already have an account? Login",
+    "login": "Login",
     "termsAndPrivacy": "By creating an account, you agree to our Terms & Privacy Policy"
 }

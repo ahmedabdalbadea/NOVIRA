@@ -23,12 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
-      "I already have an account",
-    ),
-    "alreadyHaveAccountToLogin": MessageLookupByLibrary.simpleMessage(
-      "Already have an account? Login",
+      "I already have an account?",
     ),
     "anxiousMood": MessageLookupByLibrary.simpleMessage("Anxious"),
+    "appName": MessageLookupByLibrary.simpleMessage("Novira"),
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "New Journey, Inner Harmony",
     ),
@@ -54,9 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage(
       "How are you feeling today?",
     ),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("Neutral"),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
-      "Let\'s begin your journey toward better\n well-being. We\'ll personalize your\n experience.",
+      "Let\'s begin your journey toward better\nwell-being. We\'ll personalize your\nexperience.",
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("Overwhelmed"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),

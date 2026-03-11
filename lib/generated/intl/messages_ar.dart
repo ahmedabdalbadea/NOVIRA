@@ -23,12 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
-      "لدي حساب بالفعل",
-    ),
-    "alreadyHaveAccountToLogin": MessageLookupByLibrary.simpleMessage(
-      "لديك حساب بالفعل؟ تسجيل الدخول",
+      "لدي حساب بالفعل؟",
     ),
     "anxiousMood": MessageLookupByLibrary.simpleMessage("قلق"),
+    "appName": MessageLookupByLibrary.simpleMessage("نوفيرا"),
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "رحلة جديدة، تناغم داخلي",
     ),
@@ -52,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "happyMood": MessageLookupByLibrary.simpleMessage("سعيد"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage("كيف تشعر اليوم؟"),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("عادي"),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
       "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",

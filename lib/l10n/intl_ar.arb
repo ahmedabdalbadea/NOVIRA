@@ -11,7 +11,7 @@
     "overwhelmedMood": "مُثقل",
     "onboardingDescription": "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     "startYourJourney": "ابدأ رحلتك",
-    "alreadyHaveAccount": "لدي حساب بالفعل",
+    "alreadyHaveAccount": "لدي حساب بالفعل؟",
     "pleaseSelectMood": "من فضلك! اختر حالتك المزاجية للبدء",
     "createYourSafeSpace": "أنشئ مساحتك الآمنة",
     "fullName": "الاسم بالكامل",
@@ -23,6 +23,6 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "confirmPasswordHint": "أعد كتابة كلمة المرور",
     "createAccount": "إنشاء حساب",
-    "alreadyHaveAccountToLogin": "لديك حساب بالفعل؟ تسجيل الدخول",
+    "login": "تسجيل الدخول",
     "termsAndPrivacy": "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا"
 }

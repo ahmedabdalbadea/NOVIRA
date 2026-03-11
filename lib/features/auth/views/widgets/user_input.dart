@@ -14,7 +14,7 @@ class UserInput extends StatelessWidget {
   final String lable;
   final IconData? prefixIcon;
   final String hintText;
-  final Widget? suffixIcon;
+  final IconData? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return Column(
