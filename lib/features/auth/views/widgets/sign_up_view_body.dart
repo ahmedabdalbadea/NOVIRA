@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:novira_app/constants.dart';
-import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
-import 'package:novira_app/features/auth/views/widgets/navigate_to_section.dart';
+import 'package:novira_app/features/auth/views/widgets/navigate_to_log_in_section.dart';
 import 'package:novira_app/features/auth/views/widgets/user_inputs_section.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/generated/l10n.dart';
@@ -24,7 +21,7 @@ class SignUpViewBody extends StatelessWidget {
           const SizedBox(height: 24),
           UserInputsSection(),
           const SizedBox(height: 24),
-          NavigateToSection(mood: mood),
+          NavigateToLogInSection(mood: mood),
         ],
       ),
     );

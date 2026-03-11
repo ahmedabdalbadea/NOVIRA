@@ -5,8 +5,8 @@ import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/generated/l10n.dart';
 
-class NavigateToSection extends StatelessWidget {
-  const NavigateToSection({super.key, required this.mood});
+class NavigateToLogInSection extends StatelessWidget {
+  const NavigateToLogInSection({super.key, required this.mood});
 
   final String mood;
 
