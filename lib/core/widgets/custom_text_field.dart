@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, this.prefixIcon, required this.hintText});
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
+    super.key,
+    this.prefixIcon,
+    required this.hintText,
+  });
   final IconData? prefixIcon;
   final String hintText;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(decoration: _getInputDecoration());
+    return TextFormField(
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return "Field is required";
+        } else {
+          return null;
+        }
+      },
+      decoration: _getInputDecoration(),
+    );
   }
 
   InputDecoration _getInputDecoration() {
@@ -19,6 +32,9 @@ class CustomTextField extends StatelessWidget {
       enabledBorder: _buildBorder(),
       focusedBorder: _buildBorder().copyWith(
         borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2),
+      ),
+      errorBorder: _buildBorder().copyWith(
+        borderSide: BorderSide(color: Colors.redAccent, width: 2),
       ),
       fillColor: Colors.white,
       hintText: hintText,

@@ -20,7 +20,7 @@ class UserInput extends StatelessWidget {
       children: [
         Text(lable, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
         const SizedBox(height: 8),
-        CustomTextField(prefixIcon: prefixIcon, hintText: hintText),
+        CustomTextFormField(prefixIcon: prefixIcon, hintText: hintText),
       ],
     );
   }

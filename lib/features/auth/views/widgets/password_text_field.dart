@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
-class PasswordTextField extends StatefulWidget {
-  const PasswordTextField({
+class PasswordTextFormField extends StatefulWidget {
+  const PasswordTextFormField({
     super.key,
     this.prefixIcon,
     required this.hintText,
@@ -13,14 +13,24 @@ class PasswordTextField extends StatefulWidget {
   final IconData? suffixIcon;
 
   @override
-  State<PasswordTextField> createState() => _PasswordTextFieldState();
+  State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
 }
 
-class _PasswordTextFieldState extends State<PasswordTextField> {
+class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
   bool hidden = true;
   @override
   Widget build(BuildContext context) {
-    return TextField(obscureText: hidden, decoration: _getInputDecoration());
+    return TextFormField(
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return "Field is required";
+        } else {
+          return null;
+        }
+      },
+      obscureText: hidden,
+      decoration: _getInputDecoration(),
+    );
   }
 
   InputDecoration _getInputDecoration() {
@@ -39,6 +49,9 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       filled: true,
       border: _buildBorder(),
       enabledBorder: _buildBorder(),
+      errorBorder: _buildBorder().copyWith(
+        borderSide: BorderSide(color: Colors.redAccent, width: 2),
+      ),
       focusedBorder: _buildBorder().copyWith(
         borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2),
       ),

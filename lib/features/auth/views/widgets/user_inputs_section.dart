@@ -10,40 +10,47 @@ class UserInputsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        UserInput(
-          lable: S.of(context).fullName,
-          prefixIcon: Icons.person_outline,
-          hintText: S.of(context).enterFullName,
-        ),
-        const SizedBox(height: 16),
-        UserInput(
-          prefixIcon: Icons.email_outlined,
-          lable: S.of(context).email,
-          hintText: S.of(context).emailHint,
-        ),
-        const SizedBox(height: 16),
-        UserPasswordInput(
-          prefixIcon: Icons.lock_outline,
-          lable: S.of(context).password,
-          hintText: S.of(context).createPassword,
-          suffixIcon: Icons.visibility_outlined,
-        ),
-        const SizedBox(height: 16),
-        UserPasswordInput(
-          prefixIcon: Icons.lock_outline,
-          lable: S.of(context).confirmPassword,
-          hintText: S.of(context).confirmPasswordHint,
-          suffixIcon: Icons.visibility_outlined,
-        ),
-        const SizedBox(height: 24),
+    GlobalKey<FormState> formKey = GlobalKey<FormState>();
+    return Form(
+      key: formKey,
+      child: Column(
+        children: [
+          UserInput(
+            lable: S.of(context).fullName,
+            prefixIcon: Icons.person_outline,
+            hintText: S.of(context).enterFullName,
+          ),
+          const SizedBox(height: 16),
+          UserInput(
+            prefixIcon: Icons.email_outlined,
+            lable: S.of(context).email,
+            hintText: S.of(context).emailHint,
+          ),
+          const SizedBox(height: 16),
+          UserPasswordInput(
+            prefixIcon: Icons.lock_outline,
+            lable: S.of(context).password,
+            hintText: S.of(context).createPassword,
+            suffixIcon: Icons.visibility_outlined,
+          ),
+          const SizedBox(height: 16),
+          UserPasswordInput(
+            prefixIcon: Icons.lock_outline,
+            lable: S.of(context).confirmPassword,
+            hintText: S.of(context).confirmPasswordHint,
+            suffixIcon: Icons.visibility_outlined,
+          ),
+          const SizedBox(height: 24),
 
-        CustomElevatedButton(
-          gradientColors: kSecGradientColors,
-          title: S.of(context).createAccount,
-        ),
-      ],
+          CustomElevatedButton(
+            gradientColors: kSecGradientColors,
+            title: S.of(context).createAccount,
+            onPressed: () {
+              if (formKey.currentState!.validate()) {}
+            },
+          ),
+        ],
+      ),
     );
   }
 }

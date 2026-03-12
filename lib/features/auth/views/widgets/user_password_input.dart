@@ -22,7 +22,7 @@ class UserPasswordInput extends StatelessWidget {
       children: [
         Text(lable, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
         const SizedBox(height: 8),
-        PasswordTextField(
+        PasswordTextFormField(
           prefixIcon: prefixIcon,
           hintText: hintText,
           suffixIcon: suffixIcon,
