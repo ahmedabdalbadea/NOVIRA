@@ -18,16 +18,11 @@ class GridViewMoodItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: isSelected
-            ? LinearGradient(
-                begin: AlignmentGeometry.centerLeft,
-                end: AlignmentGeometry.centerRight,
-                colors: kSecGradientColors,
-              )
+        boxShadow: isSelected
+            ? [BoxShadow(color: const Color(0x9240C3FF), blurRadius: 10)]
             : null,
         borderRadius: BorderRadius.circular(16),
       ),
-      padding: EdgeInsets.all(0.0005),
       child: Card(
         color: Colors.white,
         shadowColor: Colors.black.withValues(alpha: 0.04),
