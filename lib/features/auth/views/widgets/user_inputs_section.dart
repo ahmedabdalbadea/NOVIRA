@@ -54,6 +54,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             title: S.of(context).createAccount,
             onPressed: () {
               if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

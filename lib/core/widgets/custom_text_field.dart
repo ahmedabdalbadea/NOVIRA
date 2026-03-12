@@ -36,6 +36,10 @@ class CustomTextFormField extends StatelessWidget {
       errorBorder: _buildBorder().copyWith(
         borderSide: BorderSide(color: Colors.redAccent, width: 2),
       ),
+
+      focusedErrorBorder: _buildBorder().copyWith(
+        borderSide: BorderSide(color: Colors.redAccent, width: 2),
+      ),
       fillColor: Colors.white,
       hintText: hintText,
       hintStyle: _getHintStyle(),

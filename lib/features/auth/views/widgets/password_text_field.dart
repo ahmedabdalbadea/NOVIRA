@@ -52,6 +52,9 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
       errorBorder: _buildBorder().copyWith(
         borderSide: BorderSide(color: Colors.redAccent, width: 2),
       ),
+      focusedErrorBorder: _buildBorder().copyWith(
+        borderSide: BorderSide(color: Colors.redAccent, width: 2),
+      ),
       focusedBorder: _buildBorder().copyWith(
         borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2),
       ),
