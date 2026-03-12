@@ -5,14 +5,21 @@ import 'package:novira_app/features/auth/views/widgets/user_input.dart';
 import 'package:novira_app/features/auth/views/widgets/user_password_input.dart';
 import 'package:novira_app/generated/l10n.dart';
 
-class UserInputsSection extends StatelessWidget {
+class UserInputsSection extends StatefulWidget {
   const UserInputsSection({super.key});
 
   @override
+  State<UserInputsSection> createState() => _UserInputsSectionState();
+}
+
+class _UserInputsSectionState extends State<UserInputsSection> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Form(
       key: formKey,
+      autovalidateMode: autovalidateMode,
       child: Column(
         children: [
           UserInput(
@@ -46,7 +53,12 @@ class UserInputsSection extends StatelessWidget {
             gradientColors: kSecGradientColors,
             title: S.of(context).createAccount,
             onPressed: () {
-              if (formKey.currentState!.validate()) {}
+              if (formKey.currentState!.validate()) {
+              } else {
+                setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                });
+              }
             },
           ),
         ],
