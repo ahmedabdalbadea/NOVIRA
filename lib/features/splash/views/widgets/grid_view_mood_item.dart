@@ -16,25 +16,29 @@ class GridViewMoodItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: isSelected
-            ? [BoxShadow(color: const Color(0x9240C3FF), blurRadius: 10)]
-            : null,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Card(
-        color: Colors.white,
-        shadowColor: Colors.black.withValues(alpha: 0.04),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(moodImage),
-            Text(
-              mood,
-              style: Styles.textStyle12.copyWith(color: kDesTextColor),
-            ),
-          ],
+    return AnimatedScale(
+      scale: isSelected ? 1.1 : 1,
+      duration: Duration(milliseconds: 200),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: isSelected
+              ? [BoxShadow(color: const Color(0x9240C3FF), blurRadius: 10)]
+              : null,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Card(
+          color: Colors.white,
+          shadowColor: Colors.black.withValues(alpha: 0.04),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(moodImage),
+              Text(
+                mood,
+                style: Styles.textStyle12.copyWith(color: kDesTextColor),
+              ),
+            ],
+          ),
         ),
       ),
     );
