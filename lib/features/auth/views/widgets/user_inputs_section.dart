@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
@@ -13,6 +15,7 @@ class UserInputsSection extends StatefulWidget {
 }
 
 class _UserInputsSectionState extends State<UserInputsSection> {
+  String? fullName, email, password, confirmPassword;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
@@ -26,12 +29,18 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             lable: S.of(context).fullName,
             prefixIcon: Icons.person_outline,
             hintText: S.of(context).enterFullName,
+            onChanged: (value) {
+              fullName = value;
+            },
           ),
           const SizedBox(height: 16),
           UserInput(
             prefixIcon: Icons.email_outlined,
             lable: S.of(context).email,
             hintText: S.of(context).emailHint,
+            onChanged: (value) {
+              email = value;
+            },
           ),
           const SizedBox(height: 16),
           UserPasswordInput(
@@ -39,6 +48,9 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             lable: S.of(context).password,
             hintText: S.of(context).createPassword,
             suffixIcon: Icons.visibility_outlined,
+            onChanged: (value) {
+              password = value;
+            },
           ),
           const SizedBox(height: 16),
           UserPasswordInput(
@@ -46,6 +58,9 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             lable: S.of(context).confirmPassword,
             hintText: S.of(context).confirmPasswordHint,
             suffixIcon: Icons.visibility_outlined,
+            onChanged: (value) {
+              confirmPassword = value;
+            },
           ),
           const SizedBox(height: 24),
 
@@ -55,6 +70,11 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+
+                print(fullName);
+                print(email);
+                print(password);
+                print(confirmPassword);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
