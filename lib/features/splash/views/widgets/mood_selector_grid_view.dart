@@ -38,9 +38,7 @@ class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
 
           return GestureDetector(
             onTap: () {
-              setState(() {
-                moodProvider.selectMood(index, translatedMood);
-              });
+              moodProvider.selectMood(index, translatedMood);
             },
             child: GridViewMoodItem(
               moodImage: AssetsData.kMoodsImagesList[index],

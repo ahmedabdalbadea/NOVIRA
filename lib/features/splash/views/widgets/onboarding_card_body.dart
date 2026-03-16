@@ -9,7 +9,7 @@ class OnboardingCardBody extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       width: MediaQuery.sizeOf(context).width * 0.90,
-      padding: EdgeInsets.all(32),
+      padding: EdgeInsets.symmetric(horizontal: 28, vertical: 36),
       decoration: _buildDecoration(),
       child: body,
     );
