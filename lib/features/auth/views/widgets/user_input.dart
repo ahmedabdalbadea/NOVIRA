@@ -9,10 +9,12 @@ class UserInput extends StatelessWidget {
     required this.lable,
     this.prefixIcon,
     required this.hintText,
+    this.onChanged,
   });
   final String lable;
   final IconData? prefixIcon;
   final String hintText;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +22,11 @@ class UserInput extends StatelessWidget {
       children: [
         Text(lable, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
         const SizedBox(height: 8),
-        CustomTextFormField(prefixIcon: prefixIcon, hintText: hintText),
+        CustomTextFormField(
+          prefixIcon: prefixIcon,
+          hintText: hintText,
+          onChanged: onChanged,
+        ),
       ],
     );
   }

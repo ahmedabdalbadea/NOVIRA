@@ -7,11 +7,12 @@ class PasswordTextFormField extends StatefulWidget {
     this.prefixIcon,
     required this.hintText,
     this.suffixIcon,
+    this.onChanged,
   });
   final IconData? prefixIcon;
   final String hintText;
   final IconData? suffixIcon;
-
+  final void Function(String)? onChanged;
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
 }
@@ -21,6 +22,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "Field is required";

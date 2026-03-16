@@ -10,11 +10,13 @@ class UserPasswordInput extends StatelessWidget {
     this.prefixIcon,
     required this.hintText,
     this.suffixIcon,
+    this.onChanged,
   });
   final String lable;
   final IconData? prefixIcon;
   final String hintText;
   final IconData? suffixIcon;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,6 +28,7 @@ class UserPasswordInput extends StatelessWidget {
           prefixIcon: prefixIcon,
           hintText: hintText,
           suffixIcon: suffixIcon,
+          onChanged: onChanged,
         ),
       ],
     );

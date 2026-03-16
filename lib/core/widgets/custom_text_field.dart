@@ -6,13 +6,15 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     this.prefixIcon,
     required this.hintText,
+    this.onChanged,
   });
   final IconData? prefixIcon;
   final String hintText;
-
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "Field is required";
