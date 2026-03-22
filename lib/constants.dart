@@ -12,7 +12,7 @@ const kSecGradientColors = [
 ];
 
 const kDesTextColor = Colors.black54;
-
+const kInter  = "Inter";
 const kMoodsList = [
   "happyMood",
   "calmMood",

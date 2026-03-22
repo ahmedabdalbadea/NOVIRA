@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/auth/views/widgets/user_input.dart';
-import 'package:novira_app/features/auth/views/widgets/user_password_input.dart';
 import 'package:novira_app/generated/l10n.dart';
 
 class UserInputsSection extends StatefulWidget {
@@ -43,24 +40,24 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             },
           ),
           const SizedBox(height: 16),
-          UserPasswordInput(
+          UserInput(
             prefixIcon: Icons.lock_outline,
             lable: S.of(context).password,
             hintText: S.of(context).createPassword,
-            suffixIcon: Icons.visibility_outlined,
             onChanged: (value) {
               password = value;
             },
+            isPassword: true,
           ),
           const SizedBox(height: 16),
-          UserPasswordInput(
+          UserInput(
             prefixIcon: Icons.lock_outline,
             lable: S.of(context).confirmPassword,
             hintText: S.of(context).confirmPasswordHint,
-            suffixIcon: Icons.visibility_outlined,
             onChanged: (value) {
               confirmPassword = value;
             },
+            isPassword: true,
           ),
           const SizedBox(height: 24),
 

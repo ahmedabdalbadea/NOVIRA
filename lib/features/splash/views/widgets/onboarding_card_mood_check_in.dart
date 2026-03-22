@@ -21,7 +21,7 @@ class OnboardingCardMoodCheckIn extends StatelessWidget {
         ),
 
         const SizedBox(height: 28),
-        MoodSelectorGridView(),
+        const MoodSelectorGridView(),
       ],
     );
   }

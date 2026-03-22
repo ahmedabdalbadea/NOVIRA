@@ -26,7 +26,7 @@ class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: kMoodsList.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 3,
           mainAxisSpacing: 5,

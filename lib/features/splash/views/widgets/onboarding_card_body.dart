@@ -6,10 +6,10 @@ class OnboardingCardBody extends StatelessWidget {
   final Widget body;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       alignment: Alignment.center,
       width: MediaQuery.sizeOf(context).width * 0.90,
-      padding: EdgeInsets.symmetric(horizontal: 28, vertical: 36),
+      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
       decoration: _buildDecoration(),
       child: body,
     );

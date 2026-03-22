@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
     this.prefixIcon,
     required this.hintText,
     this.onChanged,
+    this.isPassword = false,
   });
   final IconData? prefixIcon;
   final String hintText;
   final void Function(String)? onChanged;
+  final bool isPassword;
+
+  @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  bool hide = true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: onChanged,
+      obscureText: widget.isPassword ? hide : false,
+      onChanged: widget.onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "Field is required";
@@ -28,7 +39,22 @@ class CustomTextFormField extends StatelessWidget {
 
   InputDecoration _getInputDecoration() {
     return InputDecoration(
-      prefixIcon: Icon(prefixIcon, color: Colors.grey[400]),
+      suffixIcon: widget.isPassword
+          ? IconButton(
+              onPressed: () {
+                setState(() {
+                  hide = hide ? false : true;
+                });
+              },
+              icon: Icon(
+                hide
+                    ? Icons.visibility_outlined
+                    : Icons.visibility_off_outlined,
+                color: Colors.grey[400],
+              ),
+            )
+          : null,
+      prefixIcon: Icon(widget.prefixIcon, color: Colors.grey[400]),
       filled: true,
       border: _buildBorder(),
       enabledBorder: _buildBorder(),
@@ -43,9 +69,14 @@ class CustomTextFormField extends StatelessWidget {
         borderSide: BorderSide(color: Colors.redAccent, width: 2),
       ),
       fillColor: Colors.white,
-      hintText: hintText,
+      hintText: widget.hintText,
       hintStyle: _getHintStyle(),
-      contentPadding: EdgeInsets.only(top: 14, bottom: 14, left: 48, right: 16),
+      contentPadding: const EdgeInsets.only(
+        top: 14,
+        bottom: 14,
+        left: 48,
+        right: 16,
+      ),
     );
   }
 
@@ -54,14 +85,14 @@ class CustomTextFormField extends StatelessWidget {
       color: const Color(0xFFC5CEE0),
       fontWeight: FontWeight.w400,
       letterSpacing: 0.5,
-      fontFamily: "Inter",
+      fontFamily: kInter,
     );
   }
 
   OutlineInputBorder _buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
-      borderSide: BorderSide(color: Colors.transparent),
+      borderSide: const BorderSide(color: Colors.transparent),
     );
   }
 }

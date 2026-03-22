@@ -6,6 +6,6 @@ class LogInViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnboardingCardBody(body: Text("fkjsdlkf"));
+    return const OnboardingCardBody(body: Text("fkjsdlkf"));
   }
 }

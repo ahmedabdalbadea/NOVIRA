@@ -25,7 +25,7 @@ class SignUpViewBody extends StatelessWidget {
                 style: Styles.textStyle24,
               ),
               const SizedBox(height: 24),
-              UserInputsSection(),
+              const UserInputsSection(),
               const SizedBox(height: 24),
               NavigateToLogInSection(mood: mood),
             ],

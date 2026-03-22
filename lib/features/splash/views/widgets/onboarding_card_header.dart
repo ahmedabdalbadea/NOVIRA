@@ -11,7 +11,7 @@ class OnboardingCardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomLogo(),
+        const CustomLogo(),
 
         const SizedBox(height: 12),
 

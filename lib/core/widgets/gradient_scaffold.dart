@@ -6,7 +6,7 @@ class GradientScaffold extends StatelessWidget {
   final Widget? body;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,

@@ -16,7 +16,7 @@ class IconLanguageButtonMenu extends StatelessWidget {
       elevation: 4,
       shadowColor: Colors.black12,
       clipBehavior: Clip.antiAlias,
-      menuPadding: EdgeInsets.zero,
+      menuPadding:  EdgeInsets.zero,
       offset: const Offset(0, 55),
       initialValue: languageProvider.language,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -28,7 +28,7 @@ class IconLanguageButtonMenu extends StatelessWidget {
   List<PopupMenuEntry<String>> _languages(BuildContext context) => [
     PopupMenuItem(
       value: "en",
-      child: Text("English", style: Styles.textStyle12),
+      child:const Text("English", style: Styles.textStyle12),
     ),
 
     PopupMenuItem(
