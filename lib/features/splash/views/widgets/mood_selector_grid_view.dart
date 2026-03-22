@@ -23,6 +23,7 @@ class _MoodSelectorGridViewState extends State<MoodSelectorGridView> {
       width: MediaQuery.widthOf(context) * 0.72,
 
       child: GridView.builder(
+        key: ValueKey(Localizations.localeOf(context).languageCode),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: kMoodsList.length,

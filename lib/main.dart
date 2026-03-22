@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/providers/language_provider/language_provider.dart';
 import 'package:novira_app/generated/l10n.dart';
@@ -20,6 +19,7 @@ class NoviraApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<LanguageProvider>(context).textTheme);
     return MaterialApp.router(
       locale: Locale(Provider.of<LanguageProvider>(context).language),
       localizationsDelegates: [
@@ -31,7 +31,9 @@ class NoviraApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(textTheme: GoogleFonts.nunitoTextTheme()),
+      theme: ThemeData(
+        textTheme: Provider.of<LanguageProvider>(context).textTheme,
+      ),
     );
   }
 }
