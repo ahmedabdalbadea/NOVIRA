@@ -20,27 +20,9 @@ abstract class AppRouter {
         path: kSignUpView,
         pageBuilder: (context, state) {
           final String mood = state.extra as String;
-
-          return CustomTransitionPage(
+          return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: SignUpView(mood: mood),
-            transitionDuration: const Duration(milliseconds: 600),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-                  const begin = Offset(1.0, 0.0);
-                  const end = Offset.zero;
-                  const curve = Curves.easeInOutCubic;
-                  var tween = Tween(
-                    begin: begin,
-                    end: end,
-                  ).chain(CurveTween(curve: curve));
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                    position: offsetAnimation,
-                    child: child,
-                  );
-                },
           );
         },
       ),
@@ -49,30 +31,35 @@ abstract class AppRouter {
         path: kLogInView,
         pageBuilder: (context, state) {
           final String mood = state.extra as String;
-
-          return CustomTransitionPage(
+          return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: LogInView(mood: mood),
-            transitionDuration: const Duration(milliseconds: 600),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-                  const begin = Offset(1.0, 0.0);
-                  const end = Offset.zero;
-                  const curve = Curves.easeInOutCubic;
-                  var tween = Tween(
-                    begin: begin,
-                    end: end,
-                  ).chain(CurveTween(curve: curve));
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                    position: offsetAnimation,
-                    child: child,
-                  );
-                },
           );
         },
       ),
     ],
   );
+
+  static CustomTransitionPage<dynamic> navigateWithSlidingAnimation({
+    required LocalKey? key,
+    required Widget child,
+  }) {
+    return CustomTransitionPage(
+      key: key,
+      child: child,
+      transitionDuration: const Duration(milliseconds: 600),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.easeInOutCubic;
+        var tween = Tween(
+          begin: begin,
+          end: end,
+        ).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
+    );
+  }
 }
