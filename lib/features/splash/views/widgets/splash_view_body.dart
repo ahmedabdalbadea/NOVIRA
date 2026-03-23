@@ -51,6 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         FadeTransition(
           opacity: languageIconAnimation,
