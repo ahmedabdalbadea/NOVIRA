@@ -58,34 +58,39 @@ class _OnboardingCardState extends State<OnboardingCard>
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MoodProvider(),
-      child: OnboardingCardBody(
-        body: Column(
-          children: [
-            FadeTransition(
-              opacity: headerAnimation,
-              child: const OnboardingCardHeader(),
+      child: Center(
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: OnboardingCardBody(
+            body: Column(
+              children: [
+                FadeTransition(
+                  opacity: headerAnimation,
+                  child: const OnboardingCardHeader(),
+                ),
+        
+                const SizedBox(height: 28),
+        
+                FadeTransition(
+                  opacity: moodGridAnimation,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0, 0.2),
+                      end: Offset.zero,
+                    ).animate(moodGridAnimation),
+                    child: const OnboardingCardMoodCheckIn(),
+                  ),
+                ),
+        
+                const SizedBox(height: 12),
+        
+                FadeTransition(
+                  opacity: actionsAnimation,
+                  child: const OnboardingCardActions(),
+                ),
+              ],
             ),
-
-            const SizedBox(height: 28),
-
-            FadeTransition(
-              opacity: moodGridAnimation,
-              child: SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0, 0.2),
-                  end: Offset.zero,
-                ).animate(moodGridAnimation),
-                child: const OnboardingCardMoodCheckIn(),
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            FadeTransition(
-              opacity: actionsAnimation,
-              child: const OnboardingCardActions(),
-            ),
-          ],
+          ),
         ),
       ),
     );

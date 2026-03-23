@@ -19,7 +19,6 @@ class NoviraApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<LanguageProvider>(context).textTheme);
     return MaterialApp.router(
       locale: Locale(Provider.of<LanguageProvider>(context).language),
       localizationsDelegates: [
