@@ -9,12 +9,13 @@ class CustomTextFormField extends StatefulWidget {
     required this.hintText,
     this.onChanged,
     this.isPassword = false,
+    required this.validator,
   });
   final IconData? prefixIcon;
   final String hintText;
   final void Function(String)? onChanged;
   final bool isPassword;
-
+  final String? Function(String?)? validator;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -26,13 +27,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return TextFormField(
       obscureText: widget.isPassword ? hide : false,
       onChanged: widget.onChanged,
-      validator: (value) {
-        if (value?.isEmpty ?? true) {
-          return "Field is required";
-        } else {
-          return null;
-        }
-      },
+      // validator: (value) {
+      //   if (value?.isEmpty ?? true) {
+      //     return "Field is required";
+      //   } else {
+      //     return null;
+      //   }
+      // },
+      validator: widget.validator,
       decoration: _getInputDecoration(),
     );
   }

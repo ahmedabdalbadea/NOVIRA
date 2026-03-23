@@ -12,7 +12,7 @@ class UserInputsSection extends StatefulWidget {
 }
 
 class _UserInputsSectionState extends State<UserInputsSection> {
-  String? fullName, email, password, confirmPassword;
+  String? _fullName, _email, _password, _confirmPassword;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
@@ -23,41 +23,54 @@ class _UserInputsSectionState extends State<UserInputsSection> {
       child: Column(
         children: [
           UserInput(
-            lable: S.of(context).fullName,
+            label: S.of(context).fullName,
             prefixIcon: Icons.person_outline,
             hintText: S.of(context).enterFullName,
             onChanged: (value) {
-              fullName = value;
+              _fullName = value;
+            },
+
+            validator: (value) {
+              return requiredFieldValidator(value);
             },
           ),
           const SizedBox(height: 16),
           UserInput(
             prefixIcon: Icons.email_outlined,
-            lable: S.of(context).email,
+            label: S.of(context).email,
             hintText: S.of(context).emailHint,
             onChanged: (value) {
-              email = value;
+              _email = value;
+            },
+            validator: (value) {
+              return requiredFieldValidator(value);
             },
           ),
           const SizedBox(height: 16),
           UserInput(
             prefixIcon: Icons.lock_outline,
-            lable: S.of(context).password,
+            label: S.of(context).password,
             hintText: S.of(context).createPassword,
             onChanged: (value) {
-              password = value;
+              _password = value;
             },
             isPassword: true,
+            validator: (value) {
+              return requiredFieldValidator(value);
+            },
           ),
           const SizedBox(height: 16),
           UserInput(
             prefixIcon: Icons.lock_outline,
-            lable: S.of(context).confirmPassword,
+            label: S.of(context).confirmPassword,
             hintText: S.of(context).confirmPasswordHint,
             onChanged: (value) {
-              confirmPassword = value;
+              _confirmPassword = value;
             },
             isPassword: true,
+            validator: (value) {
+              return confirmPasswordValidator(value);
+            },
           ),
           const SizedBox(height: 24),
 
@@ -68,10 +81,10 @@ class _UserInputsSectionState extends State<UserInputsSection> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
 
-                print(fullName);
-                print(email);
-                print(password);
-                print(confirmPassword);
+                print(_fullName);
+                print(_email);
+                print(_password);
+                print(_confirmPassword);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
@@ -82,5 +95,22 @@ class _UserInputsSectionState extends State<UserInputsSection> {
         ],
       ),
     );
+  }
+
+  String? confirmPasswordValidator(String? value) {
+    String? re = requiredFieldValidator(value);
+    if (re == null) {
+      return _password == _confirmPassword ? null : "Passwords do not match";
+    } else {
+      return re;
+    }
+  }
+
+  String? requiredFieldValidator(String? value) {
+    if (value?.isEmpty ?? true) {
+      return "Field is required";
+    } else {
+      return null;
+    }
   }
 }

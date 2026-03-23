@@ -6,29 +6,32 @@ import 'package:novira_app/core/widgets/custom_text_field.dart';
 class UserInput extends StatelessWidget {
   const UserInput({
     super.key,
-    required this.lable,
+    required this.label,
     this.prefixIcon,
     required this.hintText,
     this.onChanged,
     this.isPassword = false,
+    required this.validator,
   });
-  final String lable;
+  final String label;
   final IconData? prefixIcon;
   final String hintText;
   final void Function(String)? onChanged;
   final bool isPassword;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(lable, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
+        Text(label, style: Styles.textStyle14.copyWith(color: kDesTextColor)),
         const SizedBox(height: 8),
         CustomTextFormField(
           isPassword: isPassword,
           prefixIcon: prefixIcon,
           hintText: hintText,
           onChanged: onChanged,
+          validator: validator,
         ),
       ],
     );
