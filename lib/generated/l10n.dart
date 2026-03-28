@@ -253,6 +253,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Connection Timeout With Server`
+  String get connection_timeout {
+    return Intl.message(
+      'Connection Timeout With Server',
+      name: 'connection_timeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Timeout With Server`
+  String get send_timeout {
+    return Intl.message(
+      'Send Timeout With Server',
+      name: 'send_timeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive Timeout With Server`
+  String get receive_timeout {
+    return Intl.message(
+      'Receive Timeout With Server',
+      name: 'receive_timeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect Certificate With Server`
+  String get bad_certificate {
+    return Intl.message(
+      'Incorrect Certificate With Server',
+      name: 'bad_certificate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Request is Canceled With Server`
+  String get cancel_error {
+    return Intl.message(
+      'Your Request is Canceled With Server',
+      name: 'cancel_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Internet Connection`
+  String get no_internet {
+    return Intl.message(
+      'No Internet Connection',
+      name: 'no_internet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops, There was Error, Please Try again!`
+  String get unknown_error {
+    return Intl.message(
+      'Oops, There was Error, Please Try again!',
+      name: 'unknown_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Request is Not Found, Please try later`
+  String get not_found {
+    return Intl.message(
+      'Your Request is Not Found, Please try later',
+      name: 'not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server Internal Error, Please try later`
+  String get server_error {
+    return Intl.message(
+      'Server Internal Error, Please try later',
+      name: 'server_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

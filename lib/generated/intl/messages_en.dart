@@ -30,10 +30,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "New Journey, Inner Harmony",
     ),
+    "bad_certificate": MessageLookupByLibrary.simpleMessage(
+      "Incorrect Certificate With Server",
+    ),
     "calmMood": MessageLookupByLibrary.simpleMessage("Calm"),
+    "cancel_error": MessageLookupByLibrary.simpleMessage(
+      "Your Request is Canceled With Server",
+    ),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
       "Confirm your password",
+    ),
+    "connection_timeout": MessageLookupByLibrary.simpleMessage(
+      "Connection Timeout With Server",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "createPassword": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +63,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("Neutral"),
+    "no_internet": MessageLookupByLibrary.simpleMessage(
+      "No Internet Connection",
+    ),
+    "not_found": MessageLookupByLibrary.simpleMessage(
+      "Your Request is Not Found, Please try later",
+    ),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
       "Let\'s begin your journey toward better\nwell-being. We\'ll personalize your\nexperience.",
     ),
@@ -62,12 +77,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "Please! Select Your Mood to Start",
     ),
+    "receive_timeout": MessageLookupByLibrary.simpleMessage(
+      "Receive Timeout With Server",
+    ),
     "sadMood": MessageLookupByLibrary.simpleMessage("Sad"),
+    "send_timeout": MessageLookupByLibrary.simpleMessage(
+      "Send Timeout With Server",
+    ),
+    "server_error": MessageLookupByLibrary.simpleMessage(
+      "Server Internal Error, Please try later",
+    ),
     "startYourJourney": MessageLookupByLibrary.simpleMessage(
       "Start Your Journey",
     ),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "By creating an account, you agree to our Terms & Privacy Policy",
+    ),
+    "unknown_error": MessageLookupByLibrary.simpleMessage(
+      "Oops, There was Error, Please Try again!",
     ),
   };
 }

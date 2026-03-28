@@ -30,12 +30,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "رحلة جديدة، تناغم داخلي",
     ),
+    "bad_certificate": MessageLookupByLibrary.simpleMessage(
+      "خطأ في شهادة الأمان الخاصة بالسيرفر",
+    ),
     "calmMood": MessageLookupByLibrary.simpleMessage("هادئ"),
+    "cancel_error": MessageLookupByLibrary.simpleMessage(
+      "تم إلغاء الطلب المرسل للسيرفر",
+    ),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
     "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
       "أعد كتابة كلمة المرور",
+    ),
+    "connection_timeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة الاتصال بالسيرفر",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createPassword": MessageLookupByLibrary.simpleMessage(
@@ -52,6 +61,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage("كيف تشعر اليوم؟"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("عادي"),
+    "no_internet": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت",
+    ),
+    "not_found": MessageLookupByLibrary.simpleMessage(
+      "العنوان المطلوب غير موجود، حاول لاحقاً",
+    ),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
       "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     ),
@@ -60,10 +75,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "من فضلك! اختر حالتك المزاجية للبدء",
     ),
+    "receive_timeout": MessageLookupByLibrary.simpleMessage(
+      "فشل استقبال البيانات من السيرفر",
+    ),
     "sadMood": MessageLookupByLibrary.simpleMessage("حزين"),
+    "send_timeout": MessageLookupByLibrary.simpleMessage(
+      "فشل إرسال البيانات، حاول مرة أخرى",
+    ),
+    "server_error": MessageLookupByLibrary.simpleMessage(
+      "مشكلة في السيرفر الداخلي، حاول لاحقاً",
+    ),
     "startYourJourney": MessageLookupByLibrary.simpleMessage("ابدأ رحلتك"),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا",
+    ),
+    "unknown_error": MessageLookupByLibrary.simpleMessage(
+      "عذراً، حدث خطأ ما، يرجى المحاولة لاحقاً",
     ),
   };
 }

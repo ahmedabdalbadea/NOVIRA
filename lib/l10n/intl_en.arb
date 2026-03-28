@@ -24,5 +24,14 @@
     "confirmPasswordHint": "Confirm your password",
     "createAccount": "Create Account",
     "login": "Login",
-    "termsAndPrivacy": "By creating an account, you agree to our Terms & Privacy Policy"
+    "termsAndPrivacy": "By creating an account, you agree to our Terms & Privacy Policy",
+    "connection_timeout": "Connection Timeout With Server",
+    "send_timeout": "Send Timeout With Server",
+    "receive_timeout": "Receive Timeout With Server",
+    "bad_certificate": "Incorrect Certificate With Server",
+    "cancel_error": "Your Request is Canceled With Server",
+    "no_internet": "No Internet Connection",
+    "unknown_error": "Oops, There was Error, Please Try again!",
+    "not_found": "Your Request is Not Found, Please try later",
+    "server_error": "Server Internal Error, Please try later"
 }
