@@ -20,70 +20,81 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: OnboardingCardBody(
-        body: Form(
-          key: formKey,
-          autovalidateMode: autovalidateMode,
-          child: Column(
-            children: [
-              const CustomLogo(),
-              const SizedBox(height: 32),
-              Text(
-                'Forgot Password?',
-                style: Styles.textStyle30,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                "Enter your email and we'll send you a reset link.",
-                textAlign: TextAlign.center,
-                style: Styles.textStyle14.copyWith(color: Colors.black45),
-              ),
-              const SizedBox(height: 32),
-              UserInput(
-                prefixIcon: Icons.email_outlined,
-                label: 'Email Address',
-                hintText: 'your.email@example.com',
-                validator: _emailValidator,
-              ),
-              const SizedBox(height: 24),
-              CustomElevatedButton(
-                gradientColors: kSecGradientColors,
-                title: 'Send Reset Link',
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    // TODO: Send reset email
-                  } else {
-                    setState(() {
-                      autovalidateMode = AutovalidateMode.always;
-                    });
-                  }
-                },
-              ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () => context.pop(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.arrow_back_ios,
-                      size: 16,
-                      color: kDesTextColor,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Back to Login',
-                      style: Styles.textStyle14.copyWith(color: kDesTextColor),
-                    ),
-                  ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            child: Center(
+              child: OnboardingCardBody(
+                body: Form(
+                  key: formKey,
+                  autovalidateMode: autovalidateMode,
+                  child: Column(
+                    children: [
+                      const CustomLogo(),
+                      const SizedBox(height: 32),
+                      Text(
+                        'Forgot Password?',
+                        style: Styles.textStyle30,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        "Enter your email and we'll send you a reset link.",
+                        textAlign: TextAlign.center,
+                        style: Styles.textStyle14.copyWith(color: Colors.black45),
+                      ),
+                      const SizedBox(height: 32),
+                      UserInput(
+                        prefixIcon: Icons.email_outlined,
+                        label: 'Email Address',
+                        hintText: 'your.email@example.com',
+                        validator: _emailValidator,
+                      ),
+                      const SizedBox(height: 24),
+                      CustomElevatedButton(
+                        gradientColors: kSecGradientColors,
+                        title: 'Send Reset Link',
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            // TODO: Send reset email
+                          } else {
+                            setState(() {
+                              autovalidateMode = AutovalidateMode.always;
+                            });
+                          }
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      GestureDetector(
+                        onTap: () => context.pop(),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.arrow_back_ios,
+                              size: 16,
+                              color: kDesTextColor,
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Back to Login',
+                              style: Styles.textStyle14.copyWith(
+                                color: kDesTextColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
