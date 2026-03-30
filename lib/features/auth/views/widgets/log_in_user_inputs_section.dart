@@ -7,7 +7,7 @@ import 'package:novira_app/features/auth/views/widgets/forgot_password_button.da
 import 'package:novira_app/generated/l10n.dart';
 
 class LogInUserInputsSection extends StatefulWidget {
-  const LogInUserInputsSection({super.key});
+const LogInUserInputsSection({super.key});
 
   @override
   State<LogInUserInputsSection> createState() => _LogInUserInputsSectionState();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
 import 'package:novira_app/features/auth/views/widgets/log_in_user_inputs_section.dart';
@@ -26,7 +27,9 @@ class LogInViewBody extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 "We're glad to see you again.",
-                style: Styles.textStyle20,
+                style: Styles.textStyle14.copyWith(
+                  color: kDesTextColor
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
