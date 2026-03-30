@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_validators.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/auth/views/widgets/log_in_form_fields.dart';
 import 'package:novira_app/features/auth/views/widgets/forgot_password_button.dart';
@@ -24,8 +25,10 @@ class _LogInUserInputsSectionState extends State<LogInUserInputsSection> {
       child: Column(
         children: [
           LogInFormFields(
-            emailValidator: _emailValidator,
-            passwordValidator: _requiredFieldValidator,
+            emailValidator: (value) =>
+                AppValidators.emailValidator(context, value),
+            passwordValidator: (value) =>
+                AppValidators.requiredFieldValidator(context, value),
           ),
           const SizedBox(height: 8),
           const ForgotPasswordButton(),
@@ -46,26 +49,5 @@ class _LogInUserInputsSectionState extends State<LogInUserInputsSection> {
         ],
       ),
     );
-  }
-
-  String? _requiredFieldValidator(String? value) {
-    if (value?.trim().isEmpty ?? true) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
-  String? _emailValidator(String? value) {
-    final requiredValidation = _requiredFieldValidator(value);
-    if (requiredValidation != null) {
-      return requiredValidation;
-    }
-
-    final isValidEmail = RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(
-      value!.trim(),
-    );
-
-    return isValidEmail ? null : 'Please enter a valid email';
   }
 }

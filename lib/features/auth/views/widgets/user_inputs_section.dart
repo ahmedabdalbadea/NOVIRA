@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/app_router.dart';
+import 'package:novira_app/core/utils/app_validators.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/auth/views/widgets/user_input.dart';
 import 'package:novira_app/generated/l10n.dart';
@@ -29,7 +30,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             prefixIcon: Icons.person_outline,
             hintText: S.of(context).enterFullName,
             validator: (value) {
-              return requiredFieldValidator(value);
+              return AppValidators.requiredFieldValidator(context, value);
             },
           ),
           const SizedBox(height: 16),
@@ -38,7 +39,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             label: S.of(context).email,
             hintText: S.of(context).emailHint,
             validator: (value) {
-              return emailValidator(value);
+              return AppValidators.emailValidator(context, value);
             },
           ),
           const SizedBox(height: 16),
@@ -51,7 +52,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             },
             isPassword: true,
             validator: (value) {
-              return requiredFieldValidator(value);
+              return AppValidators.requiredFieldValidator(context, value);
             },
           ),
           const SizedBox(height: 16),
@@ -64,7 +65,12 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             },
             isPassword: true,
             validator: (value) {
-              return confirmPasswordValidator(value);
+              return AppValidators.confirmPasswordValidator(
+                context,
+                value,
+                password: _password,
+                confirmPassword: _confirmPassword,
+              );
             },
           ),
           const SizedBox(height: 24),
@@ -86,37 +92,5 @@ class _UserInputsSectionState extends State<UserInputsSection> {
         ],
       ),
     );
-  }
-
-  String? confirmPasswordValidator(String? value) {
-    String? re = requiredFieldValidator(value);
-    if (re == null) {
-      return _password == _confirmPassword
-          ? null
-          : S.of(context).passwordsDoNotMatch;
-    } else {
-      return re;
-    }
-  }
-
-  String? requiredFieldValidator(String? value) {
-    if (value?.trim().isEmpty ?? true) {
-      return S.of(context).fieldRequired;
-    } else {
-      return null;
-    }
-  }
-
-  String? emailValidator(String? value) {
-    final requiredValidation = requiredFieldValidator(value);
-    if (requiredValidation != null) {
-      return requiredValidation;
-    }
-
-    final isValidEmail = RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(
-      value!.trim(),
-    );
-
-    return isValidEmail ? null : S.of(context).invalidEmail;
   }
 }
