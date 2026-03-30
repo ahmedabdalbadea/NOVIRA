@@ -11,8 +11,10 @@ const kSecGradientColors = [
   Color(0xFF8DE09C), // Light Green
 ];
 
+const kThiGradientColors = [Color(0xFFA5A4D9), Color(0xFFEAA08F)];
+
 const kDesTextColor = Colors.black54;
-const kInter  = "Inter";
+const kInter = "Inter";
 const kMoodsList = [
   "happyMood",
   "calmMood",

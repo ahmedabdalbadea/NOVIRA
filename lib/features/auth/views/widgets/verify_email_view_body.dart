@@ -76,16 +76,8 @@ class VerifyEmailViewBody extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     CustomElevatedButton(
-<<<<<<< HEAD
-                      gradientColors: kSecGradientColors,
+                      gradientColors: kThiGradientColors,
                       title: S.of(context).button_open_email,
-=======
-                      gradientColors: const [
-                        Color(0xFFA5A4D9),
-                        Color(0xFFEAA08F),
-                      ],
-                      title: 'Open Email App',
->>>>>>> 63e93ffd04b5d994530ffab22ccd1391a657d96d
                       onPressed: () {},
                     ),
                     const SizedBox(height: 16),
