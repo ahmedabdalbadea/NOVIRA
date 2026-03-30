@@ -53,7 +53,10 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       ),
                       const SizedBox(height: 24),
                       CustomElevatedButton(
-                        gradientColors: kSecGradientColors,
+                        gradientColors: const [
+                          Color(0xFFA5A4D9),
+                          Color(0xFFEAA08F),
+                        ],
                         title: 'Send Reset Link',
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
