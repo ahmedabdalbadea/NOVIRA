@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/utils/app_router.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton({super.key});
@@ -16,7 +17,7 @@ class ForgotPasswordButton extends StatelessWidget {
           context.push(AppRouter.kForgotPasswordView);
         },
         child: Text(
-          'Forgot Password?',
+          S.of(context).forgot_password,
           style: Styles.textStyle14.copyWith(color: kDesTextColor),
         ),
       ),

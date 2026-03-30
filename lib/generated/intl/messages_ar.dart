@@ -30,8 +30,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "رحلة جديدة، تناغم داخلي",
     ),
+    "back_to_login": MessageLookupByLibrary.simpleMessage(
+      "العودة لتسجيل الدخول",
+    ),
     "bad_certificate": MessageLookupByLibrary.simpleMessage(
       "خطأ في شهادة الأمان الخاصة بالسيرفر",
+    ),
+    "button_open_email": MessageLookupByLibrary.simpleMessage(
+      "فتح تطبيق البريد",
+    ),
+    "button_send": MessageLookupByLibrary.simpleMessage(
+      "إرسال رابط إعادة التعيين",
     ),
     "calmMood": MessageLookupByLibrary.simpleMessage("هادئ"),
     "cancel_error": MessageLookupByLibrary.simpleMessage(
@@ -53,12 +62,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "createYourSafeSpace": MessageLookupByLibrary.simpleMessage(
       "أنشئ مساحتك الآمنة",
     ),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailHint": MessageLookupByLibrary.simpleMessage("your.email@example.com"),
+    "email_address": MessageLookupByLibrary.simpleMessage(
+      "عنوان البريد الإلكتروني",
+    ),
     "enterFullName": MessageLookupByLibrary.simpleMessage("أدخل اسمك بالكامل"),
+    "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة المرور؟",
+    ),
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "happyMood": MessageLookupByLibrary.simpleMessage("سعيد"),
+    "header_login": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage("كيف تشعر اليوم؟"),
+    "info_text_email": MessageLookupByLibrary.simpleMessage(
+      "انقر على رابط التحقق في بريدك الإلكتروني لتنشيط حساب NOVIRA الخاص بك وبدء رحلتك الصحية.",
+    ),
+    "instruction_email_1": MessageLookupByLibrary.simpleMessage(
+      "لقد أرسلنا رابط تحقق إلى عنوان بريدك الإلكتروني.",
+    ),
+    "instruction_email_2": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بريدك للمتابعة.",
+    ),
+    "instruction_password": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني \nوسنرسل لك رابطاً لإعادة التعيين.",
+    ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
@@ -73,6 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
       "لنبدأ رحلتك نحو عافية أفضل.\nسنقوم بتخصيص تجربتك.",
     ),
+    "orContinueWith": MessageLookupByLibrary.simpleMessage(
+      "أو المتابعة باستخدام",
+    ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("مُثقل"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
@@ -84,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "receive_timeout": MessageLookupByLibrary.simpleMessage(
       "فشل استقبال البيانات من السيرفر",
     ),
+    "resend_email": MessageLookupByLibrary.simpleMessage(
+      "إعادة إرسال البريد الإلكتروني",
+    ),
     "sadMood": MessageLookupByLibrary.simpleMessage("حزين"),
     "send_timeout": MessageLookupByLibrary.simpleMessage(
       "فشل إرسال البيانات، حاول مرة أخرى",
@@ -91,13 +128,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "server_error": MessageLookupByLibrary.simpleMessage(
       "مشكلة في السيرفر الداخلي، حاول لاحقاً",
     ),
+    "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage("ابدأ رحلتك"),
-    "fieldRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "sub_header_login": MessageLookupByLibrary.simpleMessage(
+      "يسعدنا رؤيتك مرة أخرى.",
+    ),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا",
     ),
     "unknown_error": MessageLookupByLibrary.simpleMessage(
       "عذراً، حدث خطأ ما، يرجى المحاولة لاحقاً",
+    ),
+    "verify_email": MessageLookupByLibrary.simpleMessage(
+      "تحقق من بريدك الإلكتروني",
     ),
   };
 }

@@ -6,6 +6,7 @@ import 'package:novira_app/core/widgets/custom_logo.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/features/auth/views/widgets/user_input.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class ForgotPasswordViewBody extends StatefulWidget {
   const ForgotPasswordViewBody({super.key});
@@ -35,26 +36,26 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       const CustomLogo(),
                       const SizedBox(height: 32),
                       Text(
-                        'Forgot Password?',
+                        S.of(context).forgot_password,
                         style: Styles.textStyle30,
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        "Enter your email \nand we'll send you a reset link.",
+                        S.of(context).instruction_password,
                         textAlign: TextAlign.center,
                         style: Styles.textStyle14.copyWith(color: Colors.black45),
                       ),
                       const SizedBox(height: 32),
                       UserInput(
                         prefixIcon: Icons.email_outlined,
-                        label: 'Email Address',
-                        hintText: 'your.email@example.com',
+                        label: S.of(context).email_address,
+                        hintText: S.of(context).emailHint,
                         validator: _emailValidator,
                       ),
                       const SizedBox(height: 24),
                       CustomElevatedButton(
                         gradientColors: kSecGradientColors,
-                        title: 'Send Reset Link',
+                        title: S.of(context).button_send,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
@@ -79,7 +80,7 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              'Back to Login',
+                              S.of(context).back_to_login,
                               style: Styles.textStyle14.copyWith(
                                 color: kDesTextColor,
                               ),

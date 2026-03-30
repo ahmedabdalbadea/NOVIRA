@@ -26,7 +26,7 @@ class LogInFormFields extends StatelessWidget {
         UserInput(
           prefixIcon: Icons.lock_outline,
           label: S.of(context).password,
-          hintText: 'Enter your password',
+          hintText: S.of(context).enterPassword,
           isPassword: true,
           validator: passwordValidator,
         ),

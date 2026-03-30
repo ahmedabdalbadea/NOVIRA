@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class SocialDividerSection extends StatelessWidget {
   const SocialDividerSection({super.key});
@@ -17,7 +18,7 @@ class SocialDividerSection extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
           ),
           child: Text(
-            'or continue with',
+            S.of(context).orContinueWith,
             style: Styles.textStyle14.copyWith(color: Colors.black45),
           ),
         ),

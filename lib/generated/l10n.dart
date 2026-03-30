@@ -373,6 +373,171 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome Back`
+  String get header_login {
+    return Intl.message(
+      'Welcome Back',
+      name: 'header_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We're glad to see you again.`
+  String get sub_header_login {
+    return Intl.message(
+      'We\'re glad to see you again.',
+      name: 'sub_header_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email \nand we'll send you a reset link.`
+  String get instruction_password {
+    return Intl.message(
+      'Enter your email \nand we\'ll send you a reset link.',
+      name: 'instruction_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Address`
+  String get email_address {
+    return Intl.message(
+      'Email Address',
+      name: 'email_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Reset Link`
+  String get button_send {
+    return Intl.message(
+      'Send Reset Link',
+      name: 'button_send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Login`
+  String get back_to_login {
+    return Intl.message(
+      'Back to Login',
+      name: 'back_to_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Your Email`
+  String get verify_email {
+    return Intl.message(
+      'Verify Your Email',
+      name: 'verify_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We've sent a verification link to your email address.`
+  String get instruction_email_1 {
+    return Intl.message(
+      'We\'ve sent a verification link to your email address.',
+      name: 'instruction_email_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify your email to continue.`
+  String get instruction_email_2 {
+    return Intl.message(
+      'Please verify your email to continue.',
+      name: 'instruction_email_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click the verification link in your email to activate your NOVIRA account and start your wellness journey.`
+  String get info_text_email {
+    return Intl.message(
+      'Click the verification link in your email to activate your NOVIRA account and start your wellness journey.',
+      name: 'info_text_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open Email App`
+  String get button_open_email {
+    return Intl.message(
+      'Open Email App',
+      name: 'button_open_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend Email`
+  String get resend_email {
+    return Intl.message(
+      'Resend Email',
+      name: 'resend_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enterPassword {
+    return Intl.message(
+      'Enter your password',
+      name: 'enterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or continue with`
+  String get orContinueWith {
+    return Intl.message(
+      'or continue with',
+      name: 'orContinueWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

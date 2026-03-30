@@ -6,6 +6,7 @@ import 'package:novira_app/features/auth/views/widgets/log_in_user_inputs_sectio
 import 'package:novira_app/features/auth/views/widgets/navigate_to_sign_up_section.dart';
 import 'package:novira_app/features/auth/views/widgets/social_auth_section.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class LogInViewBody extends StatelessWidget {
   const LogInViewBody({super.key, required this.mood});
@@ -23,10 +24,10 @@ class LogInViewBody extends StatelessWidget {
             children: [
               const CustomLogo(),
               const SizedBox(height: 8),
-              Text('Welcome Back', style: Styles.textStyle24),
+              Text(S.of(context).header_login, style: Styles.textStyle24),
               const SizedBox(height: 8),
               Text(
-                "We're glad to see you again.",
+                S.of(context).sub_header_login,
                 style: Styles.textStyle14.copyWith(
                   color: kDesTextColor
                 ),

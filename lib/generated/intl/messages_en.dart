@@ -30,9 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTagline": MessageLookupByLibrary.simpleMessage(
       "New Journey, Inner Harmony",
     ),
+    "back_to_login": MessageLookupByLibrary.simpleMessage("Back to Login"),
     "bad_certificate": MessageLookupByLibrary.simpleMessage(
       "Incorrect Certificate With Server",
     ),
+    "button_open_email": MessageLookupByLibrary.simpleMessage("Open Email App"),
+    "button_send": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
     "calmMood": MessageLookupByLibrary.simpleMessage("Calm"),
     "cancel_error": MessageLookupByLibrary.simpleMessage(
       "Your Request is Canceled With Server",
@@ -51,15 +54,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "createYourSafeSpace": MessageLookupByLibrary.simpleMessage(
       "Create Your Safe Space",
     ),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailHint": MessageLookupByLibrary.simpleMessage("your.email@example.com"),
+    "email_address": MessageLookupByLibrary.simpleMessage("Email Address"),
     "enterFullName": MessageLookupByLibrary.simpleMessage(
       "Enter your full name",
     ),
+    "enterPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
+    ),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage("Field is required"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "happyMood": MessageLookupByLibrary.simpleMessage("Happy"),
+    "header_login": MessageLookupByLibrary.simpleMessage("Welcome Back"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage(
       "How are you feeling today?",
+    ),
+    "info_text_email": MessageLookupByLibrary.simpleMessage(
+      "Click the verification link in your email to activate your NOVIRA account and start your wellness journey.",
+    ),
+    "instruction_email_1": MessageLookupByLibrary.simpleMessage(
+      "We\'ve sent a verification link to your email address.",
+    ),
+    "instruction_email_2": MessageLookupByLibrary.simpleMessage(
+      "Please verify your email to continue.",
+    ),
+    "instruction_password": MessageLookupByLibrary.simpleMessage(
+      "Enter your email \nand we\'ll send you a reset link.",
     ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
@@ -75,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
       "Let\'s begin your journey toward better\nwell-being. We\'ll personalize your\nexperience.",
     ),
+    "orContinueWith": MessageLookupByLibrary.simpleMessage("or continue with"),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("Overwhelmed"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
@@ -86,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "receive_timeout": MessageLookupByLibrary.simpleMessage(
       "Receive Timeout With Server",
     ),
+    "resend_email": MessageLookupByLibrary.simpleMessage("Resend Email"),
     "sadMood": MessageLookupByLibrary.simpleMessage("Sad"),
     "send_timeout": MessageLookupByLibrary.simpleMessage(
       "Send Timeout With Server",
@@ -93,15 +120,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "server_error": MessageLookupByLibrary.simpleMessage(
       "Server Internal Error, Please try later",
     ),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "startYourJourney": MessageLookupByLibrary.simpleMessage(
       "Start Your Journey",
     ),
-    "fieldRequired": MessageLookupByLibrary.simpleMessage("Field is required"),
+    "sub_header_login": MessageLookupByLibrary.simpleMessage(
+      "We\'re glad to see you again.",
+    ),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "By creating an account, you agree to our Terms & Privacy Policy",
     ),
     "unknown_error": MessageLookupByLibrary.simpleMessage(
       "Oops, There was Error, Please Try again!",
     ),
+    "verify_email": MessageLookupByLibrary.simpleMessage("Verify Your Email"),
   };
 }

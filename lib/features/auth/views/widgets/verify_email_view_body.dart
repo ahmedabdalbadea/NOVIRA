@@ -4,6 +4,7 @@ import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
+import 'package:novira_app/generated/l10n.dart';
 
 class VerifyEmailViewBody extends StatelessWidget {
   const VerifyEmailViewBody({super.key});
@@ -35,16 +36,20 @@ class VerifyEmailViewBody extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 28),
-                    Text('Verify Your Email', style: Styles.textStyle30),
+                    Text(
+                      S.of(context).verify_email,
+                      style: Styles.textStyle30,
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(height: 12),
                     Text(
-                      "We've sent a verification link to your email address.",
+                      S.of(context).instruction_email_1,
                       textAlign: TextAlign.center,
                       style: Styles.textStyle14.copyWith(color: Colors.black54),
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Please verify your email to continue.',
+                      S.of(context).instruction_email_2,
                       textAlign: TextAlign.center,
                       style: Styles.textStyle14.copyWith(color: kDesTextColor),
                     ),
@@ -61,7 +66,7 @@ class VerifyEmailViewBody extends StatelessWidget {
                         border: Border.all(color: const Color(0xFFEDEDED)),
                       ),
                       child: Text(
-                        'Click the verification link in your email to activate your NOVIRA account and start your wellness journey.',
+                        S.of(context).info_text_email,
                         textAlign: TextAlign.center,
                         style: Styles.textStyle14.copyWith(
                           color: Colors.black54,
@@ -72,15 +77,17 @@ class VerifyEmailViewBody extends StatelessWidget {
                     const SizedBox(height: 30),
                     CustomElevatedButton(
                       gradientColors: kSecGradientColors,
-                      title: 'Open Email App',
+                      title: S.of(context).button_open_email,
                       onPressed: () {},
                     ),
                     const SizedBox(height: 16),
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Resend Email',
-                        style: Styles.textStyle14.copyWith(color: kDesTextColor),
+                        S.of(context).resend_email,
+                        style: Styles.textStyle14.copyWith(
+                          color: kDesTextColor,
+                        ),
                       ),
                     ),
                   ],
