@@ -32,7 +32,12 @@ class CustomElevatedButton extends StatelessWidget {
           //allows the Container's gradient to show through
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          padding:const EdgeInsets.symmetric(vertical: 16),
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
         ),
         onPressed: onPressed,
         child: Text(
