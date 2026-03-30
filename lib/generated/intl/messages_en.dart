@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage(
       "How are you feeling today?",
     ),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("Neutral"),
     "no_internet": MessageLookupByLibrary.simpleMessage(
@@ -74,6 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("Overwhelmed"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "Please! Select Your Mood to Start",
     ),
@@ -90,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startYourJourney": MessageLookupByLibrary.simpleMessage(
       "Start Your Journey",
     ),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage("Field is required"),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "By creating an account, you agree to our Terms & Privacy Policy",
     ),

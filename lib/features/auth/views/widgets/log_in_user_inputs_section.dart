@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
-import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
-import 'package:novira_app/features/auth/views/widgets/user_input.dart';
+import 'package:novira_app/features/auth/views/widgets/log_in_form_fields.dart';
+import 'package:novira_app/features/auth/views/widgets/forgot_password_button.dart';
 import 'package:novira_app/generated/l10n.dart';
 
 class LogInUserInputsSection extends StatefulWidget {
@@ -23,30 +23,13 @@ class _LogInUserInputsSectionState extends State<LogInUserInputsSection> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
-          UserInput(
-            prefixIcon: Icons.email_outlined,
-            label: S.of(context).email,
-            hintText: S.of(context).emailHint,
-            validator: _emailValidator,
+          LogInFormFields(
+            emailValidator: _emailValidator,
+            passwordValidator: _requiredFieldValidator,
           ),
+          const SizedBox(height: 8),
+          const ForgotPasswordButton(),
           const SizedBox(height: 16),
-          UserInput(
-            prefixIcon: Icons.lock_outline,
-            label: S.of(context).password,
-            hintText: 'Enter your password',
-            isPassword: true,
-            validator: _requiredFieldValidator,
-          ),
-          Align(
-            alignment: AlignmentDirectional.centerEnd,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Forgot Password?',
-                style: Styles.textStyle14.copyWith(color: kDesTextColor),
-              ),
-            ),
-          ),
           CustomElevatedButton(
             gradientColors: kSecGradientColors,
             title: S.of(context).login,

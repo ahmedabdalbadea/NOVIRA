@@ -59,6 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "happyMood": MessageLookupByLibrary.simpleMessage("سعيد"),
     "howAreYouFeeling": MessageLookupByLibrary.simpleMessage("كيف تشعر اليوم؟"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صحيح",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "neutralMood": MessageLookupByLibrary.simpleMessage("عادي"),
     "no_internet": MessageLookupByLibrary.simpleMessage(
@@ -72,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "overwhelmedMood": MessageLookupByLibrary.simpleMessage("مُثقل"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقتين",
+    ),
     "pleaseSelectMood": MessageLookupByLibrary.simpleMessage(
       "من فضلك! اختر حالتك المزاجية للبدء",
     ),
@@ -86,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مشكلة في السيرفر الداخلي، حاول لاحقاً",
     ),
     "startYourJourney": MessageLookupByLibrary.simpleMessage("ابدأ رحلتك"),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "termsAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "بإنشائك للحساب، فأنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا",
     ),

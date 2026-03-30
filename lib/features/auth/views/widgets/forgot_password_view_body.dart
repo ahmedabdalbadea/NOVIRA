@@ -1,0 +1,101 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/core/widgets/custom_elevated_button.dart';
+import 'package:novira_app/core/widgets/custom_logo.dart';
+import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
+import 'package:novira_app/constants.dart';
+import 'package:novira_app/features/auth/views/widgets/user_input.dart';
+
+class ForgotPasswordViewBody extends StatefulWidget {
+  const ForgotPasswordViewBody({super.key});
+
+  @override
+  State<ForgotPasswordViewBody> createState() => _ForgotPasswordViewBodyState();
+}
+
+class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: OnboardingCardBody(
+        body: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            children: [
+              const CustomLogo(),
+              const SizedBox(height: 32),
+              Text(
+                'Forgot Password?',
+                style: Styles.textStyle30,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                "Enter your email and we'll send you a reset link.",
+                textAlign: TextAlign.center,
+                style: Styles.textStyle14.copyWith(color: Colors.black45),
+              ),
+              const SizedBox(height: 32),
+              UserInput(
+                prefixIcon: Icons.email_outlined,
+                label: 'Email Address',
+                hintText: 'your.email@example.com',
+                validator: _emailValidator,
+              ),
+              const SizedBox(height: 24),
+              CustomElevatedButton(
+                gradientColors: kSecGradientColors,
+                title: 'Send Reset Link',
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    // TODO: Send reset email
+                  } else {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () => context.pop(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.arrow_back_ios,
+                      size: 16,
+                      color: kDesTextColor,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      'Back to Login',
+                      style: Styles.textStyle14.copyWith(color: kDesTextColor),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  String? _emailValidator(String? value) {
+    if (value?.trim().isEmpty ?? true) {
+      return 'Email is required';
+    }
+
+    final isValidEmail = RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(
+      value!.trim(),
+    );
+
+    return isValidEmail ? null : 'Please enter a valid email';
+  }
+}
