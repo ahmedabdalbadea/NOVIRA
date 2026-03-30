@@ -40,7 +40,7 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        "Enter your email and we'll send you a reset link.",
+                        "Enter your email \nand we'll send you a reset link.",
                         textAlign: TextAlign.center,
                         style: Styles.textStyle14.copyWith(color: Colors.black45),
                       ),
