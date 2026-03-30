@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:novira_app/core/widgets/gradient_scaffold.dart';
 import 'package:novira_app/features/assessment/view/widgets/assessment_view_body.dart';
 
 class AssessmentView extends StatelessWidget {
@@ -7,6 +6,6 @@ class AssessmentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(body: AssessmentViewBody());
+    return const AssessmentViewBody();
   }
 }
