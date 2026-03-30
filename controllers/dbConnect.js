@@ -7,9 +7,11 @@ const URI = process.env.URI;
  * 
  * establish connection to MongoDB 
  */
-const dbConnect = ()=>{
+const dbConnect = async ()=>{
     try{
-        const connection = mongoose.connect(URI);
+        const connection = mongoose.connect(URI, {
+            autoIndex: true
+        });
         connection.then(
             (val)=>{
                 console.log(`successfully connected to MongoDB Database: ${URI}, Time of Connection: ${val.now()}`);
