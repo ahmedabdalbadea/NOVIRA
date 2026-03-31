@@ -14,3 +14,13 @@ final class SignUpFailure extends AuthState {
 
   SignUpFailure(this.errMsg);
 }
+
+final class LogInLoading extends AuthState {}
+
+final class LogInSuccess extends AuthState {}
+
+final class LogInFailure extends AuthState {
+  final String errMsg;
+
+  LogInFailure(this.errMsg);
+}
