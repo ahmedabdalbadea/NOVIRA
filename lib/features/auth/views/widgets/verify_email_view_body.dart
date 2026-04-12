@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/core/widgets/custom_logo.dart';
@@ -78,7 +80,9 @@ class VerifyEmailViewBody extends StatelessWidget {
                     CustomElevatedButton(
                       gradientColors: kThiGradientColors,
                       title: S.of(context).button_open_email,
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go(AppRouter.kAssessmentView);
+                      },
                     ),
                     const SizedBox(height: 16),
                     TextButton(

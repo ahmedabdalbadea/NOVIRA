@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:novira_app/features/assessment/view/assessment_view.dart';
+import 'package:novira_app/features/assessment/view/question_view.dart';
 import 'package:novira_app/features/auth/views/forgot_password_view.dart';
 import 'package:novira_app/features/auth/views/log_in_view.dart';
 import 'package:novira_app/features/auth/views/sign_up_view.dart';
@@ -11,6 +13,8 @@ abstract class AppRouter {
   static const kLogInView = '/logInView';
   static const kForgotPasswordView = '/forgotPasswordView';
   static const kVerifyEmailView = '/verifyEmailView';
+  static const kAssessmentView = '/assessmentView';
+  // static const kQuestionView = '/verifyquestionView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -19,12 +23,22 @@ abstract class AppRouter {
           return const SplashView();
         },
       ),
+
       // GoRoute(
       //   path: '/',
       //   builder: (context, state) {
-      //     return const AssessmentView();
+      //     return const QuestionView();
       //   },
       // ),
+      GoRoute(
+        path: kAssessmentView,
+        pageBuilder: (context, state) {
+          return navigateWithSlidingAnimation(
+            key: state.pageKey,
+            child: AssessmentView(),
+          );
+        },
+      ),
 
       GoRoute(
         path: kSignUpView,
