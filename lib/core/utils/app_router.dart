@@ -17,19 +17,18 @@ abstract class AppRouter {
   // static const kQuestionView = '/verifyquestionView';
   static final router = GoRouter(
     routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) {
-          return const SplashView();
-        },
-      ),
-
       // GoRoute(
       //   path: '/',
       //   builder: (context, state) {
-      //     return const QuestionView();
+      //     return const SplashView();
       //   },
       // ),
+      GoRoute(
+        path: '/',
+        builder: (context, state) {
+          return const QuestionView();
+        },
+      ),
       GoRoute(
         path: kAssessmentView,
         pageBuilder: (context, state) {
