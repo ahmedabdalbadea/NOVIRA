@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/assessment/data/models/question_model.dart';
 import 'package:novira_app/features/assessment/view/widgets/answers_list_view.dart';
+import 'package:novira_app/features/assessment/view/widgets/circle_elevated_button.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
 class QuestionDetails extends StatefulWidget {
@@ -140,6 +142,13 @@ class _QuestionDetailsState extends State<QuestionDetails> {
           RadioGroup(
             onChanged: (value) {},
             child: AnswersListView(answers: questions[currentQuestion].answers),
+          ),
+
+          Row(
+            children: [
+              CircleElevatedButton(child: Icon(Icons.arrow_back)),
+              
+            ],
           ),
         ],
       ),
