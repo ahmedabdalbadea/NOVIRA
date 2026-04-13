@@ -5,6 +5,7 @@ import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/assessment/data/models/question_model.dart';
 import 'package:novira_app/features/assessment/view/widgets/answers_list_view.dart';
 import 'package:novira_app/features/assessment/view/widgets/circle_elevated_button.dart';
+import 'package:novira_app/features/assessment/view/widgets/question_actions.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
 class QuestionDetails extends StatefulWidget {
@@ -143,13 +144,8 @@ class _QuestionDetailsState extends State<QuestionDetails> {
             onChanged: (value) {},
             child: AnswersListView(answers: questions[currentQuestion].answers),
           ),
-
-          Row(
-            children: [
-              CircleElevatedButton(child: Icon(Icons.arrow_back)),
-              
-            ],
-          ),
+          const SizedBox(height: 18),
+          QuestionActions(),
         ],
       ),
     );
