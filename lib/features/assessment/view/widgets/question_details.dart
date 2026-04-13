@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
-import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/assessment/data/models/question_model.dart';
+import 'package:novira_app/features/assessment/manager/provider/question_provider.dart';
 import 'package:novira_app/features/assessment/view/widgets/answers_list_view.dart';
-import 'package:novira_app/features/assessment/view/widgets/circle_elevated_button.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_actions.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
+import 'package:provider/provider.dart';
 
 class QuestionDetails extends StatefulWidget {
   const QuestionDetails({super.key});
@@ -16,8 +16,6 @@ class QuestionDetails extends StatefulWidget {
 }
 
 class _QuestionDetailsState extends State<QuestionDetails> {
-  int currentQuestion = 0;
-
   final List<QuestionModel> questions = [
     QuestionModel(
       description: "Assessing core interest levels and daily engagement.",
@@ -129,7 +127,20 @@ class _QuestionDetailsState extends State<QuestionDetails> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    QuestionProvider questionProvider = Provider.of<QuestionProvider>(
+      context,
+      listen: false,
+    );
+    questionProvider.setListLength = questions.length;
+  }
+
+  @override
   Widget build(BuildContext context) {
+    int currentQuestion = Provider.of<QuestionProvider>(
+      context,
+    ).currentQuestion;
     return OnboardingCardBody(
       body: Column(
         children: [
