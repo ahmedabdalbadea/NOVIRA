@@ -76,7 +76,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
           const SizedBox(height: 24),
 
           CustomElevatedButton(
-            gradientColors: kSecGradientColors,
+            gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
             title: S.of(context).createAccount,
             onPressed: () {
               if (formKey.currentState!.validate()) {

@@ -54,7 +54,7 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       ),
                       const SizedBox(height: 24),
                       CustomElevatedButton(
-                        gradientColors: kThiGradientColors,
+                        gradientColors: [kStartThiGradientColor, kEndThiGradientColor],
                         title: S.of(context).button_send,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {

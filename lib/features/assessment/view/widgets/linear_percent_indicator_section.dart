@@ -33,7 +33,9 @@ class LinearPercentIndicatorSection extends StatelessWidget {
             lineHeight: 8.0,
             percent: 0.11,
             backgroundColor: kPrimaryColor,
-            linearGradient: LinearGradient(colors: kSecGradientColors),
+            linearGradient: LinearGradient(
+              colors: [kStartSecGradientColor, kEndSecGradientColor],
+            ),
             barRadius: Radius.circular(50),
           ),
         ],

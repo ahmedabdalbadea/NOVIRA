@@ -30,7 +30,7 @@ class OnboardingCardActions extends StatelessWidget {
 
         CustomElevatedButton(
           title: S.of(context).startYourJourney,
-          gradientColors: kSecGradientColors,
+          gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
           onPressed: () {
             checkMoodAndNavigate(context, AppRouter.kSignUpView);
           },

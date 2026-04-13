@@ -36,7 +36,7 @@ class _LogInUserInputsSectionState extends State<LogInUserInputsSection> {
           const ForgotPasswordButton(),
           const SizedBox(height: 16),
           CustomElevatedButton(
-            gradientColors: kSecGradientColors,
+            gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
             title: S.of(context).login,
             onPressed: () {
               if (formKey.currentState!.validate()) {
