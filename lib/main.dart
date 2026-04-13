@@ -8,13 +8,56 @@ import 'package:novira_app/simple_bloc_observer.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = SimpleBlocObserver();
   runApp(
     ChangeNotifierProvider(
       create: (_) => LanguageProvider(),
-      child: const NoviraApp(),
+      child: const StartupShell(),
     ),
   );
+}
+
+class StartupShell extends StatefulWidget {
+  const StartupShell({super.key});
+
+  @override
+  State<StartupShell> createState() => _StartupShellState();
+}
+
+class _StartupShellState extends State<StartupShell> {
+  bool _ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future<void>.delayed(const Duration(milliseconds: 160));
+      if (!mounted) return;
+      setState(() => _ready = true);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_ready) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
+            child: SizedBox(
+              width: 28,
+              height: 28,
+              child: CircularProgressIndicator(strokeWidth: 2.5),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return const NoviraApp();
+  }
 }
 
 class NoviraApp extends StatelessWidget {
@@ -35,6 +78,9 @@ class NoviraApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: Provider.of<LanguageProvider>(context).textTheme,
+        scaffoldBackgroundColor: Colors.white,
+        canvasColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
     );
   }

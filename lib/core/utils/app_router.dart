@@ -14,19 +14,13 @@ abstract class AppRouter {
   static const kForgotPasswordView = '/forgotPasswordView';
   static const kVerifyEmailView = '/verifyEmailView';
   static const kAssessmentView = '/assessmentView';
-  // static const kQuestionView = '/verifyquestionView';
+  static const kQuestionView = '/questionView';
   static final router = GoRouter(
     routes: [
-      // GoRoute(
-      //   path: '/',
-      //   builder: (context, state) {
-      //     return const SplashView();
-      //   },
-      // ),
       GoRoute(
         path: '/',
         builder: (context, state) {
-          return const QuestionView();
+          return const SplashView();
         },
       ),
       GoRoute(
@@ -34,7 +28,16 @@ abstract class AppRouter {
         pageBuilder: (context, state) {
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: AssessmentView(),
+            child: const AssessmentView(),
+          );
+        },
+      ),
+      GoRoute(
+        path: kQuestionView,
+        pageBuilder: (context, state) {
+          return navigateWithSlidingAnimation(
+            key: state.pageKey,
+            child: const QuestionView(),
           );
         },
       ),

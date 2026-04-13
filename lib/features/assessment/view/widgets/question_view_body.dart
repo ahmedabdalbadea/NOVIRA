@@ -6,7 +6,6 @@ import 'package:novira_app/features/assessment/manager/provider/question_provide
 import 'package:novira_app/features/assessment/view/widgets/linear_percent_indicator_section.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_details.dart';
 import 'package:provider/provider.dart';
-// import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class QuestionViewBody extends StatefulWidget {
   const QuestionViewBody({super.key});
@@ -21,14 +20,14 @@ class _QuestionViewBodyState extends State<QuestionViewBody> {
     return Center(
       child: Column(
         children: [
-          Expanded(child: const SizedBox()),
+          const Expanded(child: SizedBox()),
           const LinearPercentIndicatorSection(),
           const SizedBox(height: 22),
           ChangeNotifierProvider(
             create: (context) => QuestionProvider(),
-            child: QuestionDetails(),
+            child: const QuestionDetails(),
           ),
-          Expanded(child: const SizedBox()),
+          const Expanded(child: SizedBox()),
         ],
       ),
     );
