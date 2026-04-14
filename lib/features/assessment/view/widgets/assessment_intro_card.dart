@@ -68,7 +68,7 @@ class AssessmentIntroCard extends StatelessWidget {
           ),
           const SizedBox(height: 26),
           CustomElevatedButton(
-            gradientColors: kSecGradientColors,
+            gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
             title: 'Start Assessment',
             onPressed: onStartPressed,
           ),

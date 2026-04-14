@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/features/assessment/data/models/question_model.dart';
-import 'package:novira_app/features/assessment/manager/provider/question_provider.dart';
 import 'package:novira_app/features/assessment/view/widgets/answers_list_view.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_actions.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
-import 'package:provider/provider.dart';
 
 class QuestionDetails extends StatefulWidget {
   const QuestionDetails({super.key});
@@ -28,119 +26,11 @@ class _QuestionDetailsState extends State<QuestionDetails> {
         "Nearly every day",
       ],
     ),
-    QuestionModel(
-      description: "Evaluating overall mood and emotional outlook.",
-      question: "How often have you felt down, depressed, or hopeless lately?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Monitoring physical recovery and biological rhythms.",
-      question:
-          "Have you had trouble falling or staying asleep, or sleeping too much?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Measuring vitality and physical energy levels.",
-      question: "How often have you felt tired or had little energy?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Observing changes in appetite as a stress response.",
-      question: "Have you noticed a poor appetite or overeating?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Analyzing self-perception and cognitive distortions.",
-      question:
-          "How often have you felt bad about yourself—or that you are a failure or have let yourself or your family down?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Assessing cognitive focus and mental clarity.",
-      question:
-          "Have you had trouble concentrating on things, such as reading the newspaper or watching television?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Identifying psychomotor changes visible to others.",
-      question:
-          "Have you been moving or speaking so slowly that other people could have noticed? Or the opposite—being so fidgety or restless?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Screening for severe negative thoughts (Clinical Safety).",
-      question:
-          "How often have you had thoughts that you would be better off dead, or of hurting yourself in some way?",
-      answers: [
-        "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day",
-      ],
-    ),
-    QuestionModel(
-      description: "Measuring the functional impact on daily life.",
-      question:
-          "If you checked off any problems, how difficult have these problems made it for you to do your work or take care of things at home?",
-      answers: [
-        "Not difficult at all",
-        "Somewhat difficult",
-        "Very difficult",
-        "Extremely difficult",
-      ],
-    ),
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    QuestionProvider questionProvider = Provider.of<QuestionProvider>(
-      context,
-      listen: false,
-    );
-    questionProvider.setListLength = questions.length;
-  }
-
+  int currentQuestion = 0;
   @override
   Widget build(BuildContext context) {
-    int currentQuestion = Provider.of<QuestionProvider>(
-      context,
-    ).currentQuestion;
     return OnboardingCardBody(
       body: Column(
         children: [
@@ -151,10 +41,7 @@ class _QuestionDetailsState extends State<QuestionDetails> {
           const SizedBox(height: 16),
           Text(questions[currentQuestion].question, style: Styles.textStyle20),
           const SizedBox(height: 32),
-          RadioGroup(
-            onChanged: (value) {},
-            child: AnswersListView(answers: questions[currentQuestion].answers),
-          ),
+          AnswersListView(answers: questions[currentQuestion].answers),
           const SizedBox(height: 18),
           QuestionActions(),
         ],

@@ -15,24 +15,32 @@ class _AnswersListViewState extends State<AnswersListView> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: widget.answers.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            setState(() {
-              selectedAnswer = index;
-            });
-          },
-          child: AnswerCard(
-            title: widget.answers[index],
-            value: index,
-            isChoicen: index == selectedAnswer,
-          ),
-        );
+    return RadioGroup(
+      groupValue: selectedAnswer,
+      onChanged: (value) {
+        setState(() {
+          selectedAnswer = value;
+        });
       },
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: widget.answers.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedAnswer = index;
+              });
+            },
+            child: AnswerCard(
+              title: widget.answers[index],
+              value: index,
+              isChoicen: index == selectedAnswer,
+            ),
+          );
+        },
+      ),
     );
   }
 }
