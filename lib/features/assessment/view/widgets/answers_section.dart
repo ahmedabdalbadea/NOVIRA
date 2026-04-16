@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:novira_app/features/assessment/view/widgets/choice_and_not_choice_answer_card.dart';
+
+class AnswersSection extends StatefulWidget {
+  const AnswersSection({super.key, required this.answers});
+
+  final List<String> answers;
+
+  @override
+  State<AnswersSection> createState() => _AnswersSectionState();
+}
+
+class _AnswersSectionState extends State<AnswersSection> {
+  int? selectedAnswer;
+
+  @override
+  Widget build(BuildContext context) {
+    return RadioGroup(
+      groupValue: selectedAnswer,
+      onChanged: (value) {
+        setState(() {
+          selectedAnswer = value;
+        });
+      },
+      child: Column(
+        children: widget.answers
+            .asMap()
+            .entries
+            .map(
+              (e) => GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedAnswer = e.key;
+                  });
+                },
+                child: AnswerCard(
+                  title: e.value,
+                  value: e.key,
+                  isChoicen: e.key == selectedAnswer,
+                ),
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+}

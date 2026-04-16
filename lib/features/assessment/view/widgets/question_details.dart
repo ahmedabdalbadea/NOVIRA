@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/features/assessment/data/models/question_model.dart';
-import 'package:novira_app/features/assessment/view/widgets/answers_list_view.dart';
+import 'package:novira_app/features/assessment/view/widgets/answers_section.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_actions.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
@@ -41,7 +41,7 @@ class _QuestionDetailsState extends State<QuestionDetails> {
           const SizedBox(height: 16),
           Text(questions[currentQuestion].question, style: Styles.textStyle20),
           const SizedBox(height: 32),
-          AnswersListView(answers: questions[currentQuestion].answers),
+          AnswersSection(answers: questions[currentQuestion].answers),
           const SizedBox(height: 18),
           QuestionActions(),
         ],
