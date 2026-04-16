@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const {User, getUser} = require('../models/userModel.js')
 const { validateInput, validationRules } = require('../validation/userValidation')
-
+const dbConnect = require('./dbConnect.js');
+const assess = require('../models/userAssessment.js');
 /**
  * @type {import("express").RequestHandler}
  */
 
 const signUp = async (req, res) => {
-    const user = await getUser(req.body.email, req.body.password);
+    const user = await getUser(req.body.email);
     if(user){
         res.status(400).json({
             success: false,
@@ -18,10 +19,11 @@ const signUp = async (req, res) => {
     
     //Add user document to mongoDB
     try{
+        const details = req.body;
+
         await User.create({
-              full_name: details.lName,
+              full_name: details.full_name,
               password: details.password,
-              gender: details.gender,
               email: details.email
         });
         
@@ -38,7 +40,7 @@ const signUp = async (req, res) => {
         success: true,
         msg: "User Registered Successfully! We have sent a confirmation email to your email address"
     });
-    console.log('working!!');
+    
 }  
 
 /**
@@ -49,12 +51,12 @@ const Login = async (req, res) => {
     dbConnect();
     const user = await getUser(req.body.email, req.body.password);
     if(user){
-        res.status(200).json({
+       return res.status(200).json({
             success: true,
             msg: `Welcome Back ${user}`
         });
     }else{
-        res.status(404).json({
+        return res.status(404).json({
             success: false,
             msg: "User not found"
         });
@@ -62,6 +64,20 @@ const Login = async (req, res) => {
     
 }
 
+/**
+ * @type {import('express').RequestHandler}
+ */
+const handleAssessment = async (req, res)=>{
+    try{
+        res.status(200).send( req.lang === 'ar' ? assess.AssessmentQuestionsAR : assess.AssessmentQuestionsEN );
+    }
+    catch(err){
+        res.status(400).json({
+            msg: "Something went wrong!"
+        });
+    }
+}
+
 module.exports = {
-    signUp, Login
+    signUp, Login, handleAssessment
 }

@@ -1,19 +1,18 @@
 const express = require('express');
-const { signUp, Login } = require('../controllers/userController');
+const { signUp, Login, handleAssessment } = require('../controllers/userController');
 const { validateInput, validationRules, validationRulesLogin } = require('../validation/userValidation');
 
-/**
- * Initialize routes
- */
-
-function initRoutes(app){
-    //User Register Routes
-    app.post('/signup', validationRules, validateInput, signUp);
-    
-    //User Login Routes
-    app.post('/login', validationRulesLogin, validateInput, Login);
-}
+const router = express.Router();
 
 
+//User Register Routes
+router.post('/signup', validationRules, validateInput, signUp);
 
-module.exports = initRoutes;
+//User Login Routes
+router.post('/login', validationRulesLogin, validateInput, Login);
+
+//User assessment
+router.get('/assessment', handleAssessment)
+
+
+module.exports = router;

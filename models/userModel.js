@@ -3,13 +3,10 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     full_name: {type: String, required: true},
     password: {type: String, required: true},
-    gender: {type: String, required: true},
-    email: {type: String, required: true, Unique:true},
+    email: {type: String, required: true, Unique:true}
 });
 
 const User = mongoose.model('User', userSchema);
-
-
 
 const getUser = async (email, password)=> {
     await User.findOne({email: email, password: password}).then( userDoc => {
