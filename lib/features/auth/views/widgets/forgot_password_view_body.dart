@@ -43,7 +43,9 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       Text(
                         S.of(context).instruction_password,
                         textAlign: TextAlign.center,
-                        style: Styles.textStyle14.copyWith(color: Colors.black45),
+                        style: Styles.textStyle14.copyWith(
+                          color: Colors.black45,
+                        ),
                       ),
                       const SizedBox(height: 32),
                       UserInput(
@@ -54,7 +56,10 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                       ),
                       const SizedBox(height: 24),
                       CustomElevatedButton(
-                        gradientColors: [kStartThiGradientColor, kEndThiGradientColor],
+                        gradientColors: [
+                          kStartThiGradientColor,
+                          kEndThiGradientColor,
+                        ],
                         title: S.of(context).button_send,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
@@ -104,9 +109,9 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
       return 'Email is required';
     }
 
-    final isValidEmail = RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(
-      value!.trim(),
-    );
+    final isValidEmail = RegExp(
+      r'^[^\s@]+@[^\s@]+\.[^\s@]+$',
+    ).hasMatch(value!.trim());
 
     return isValidEmail ? null : 'Please enter a valid email';
   }

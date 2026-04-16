@@ -18,7 +18,7 @@ class GridViewMoodItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedScale(
       scale: isSelected ? 1.1 : 1,
-      duration:const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: isSelected

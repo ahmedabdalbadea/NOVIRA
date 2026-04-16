@@ -7,6 +7,8 @@ class LogInView extends StatelessWidget {
   final String mood;
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(body: SafeArea(child: LogInViewBody(mood: mood)));
+    return GradientScaffold(
+      body: SafeArea(child: LogInViewBody(mood: mood)),
+    );
   }
 }

@@ -10,6 +10,6 @@ class MoodProvider extends ChangeNotifier {
   void selectMood(int index, String mood) {
     _selectedItemIndex = index;
     _selectedMood = mood;
-    notifyListeners(); 
+    notifyListeners();
   }
 }

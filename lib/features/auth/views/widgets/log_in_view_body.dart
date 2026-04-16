@@ -28,9 +28,7 @@ class LogInViewBody extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 S.of(context).sub_header_login,
-                style: Styles.textStyle14.copyWith(
-                  color: kDesTextColor
-                ),
+                style: Styles.textStyle14.copyWith(color: kDesTextColor),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),

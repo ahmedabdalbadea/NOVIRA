@@ -7,10 +7,6 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
-      body: SafeArea(
-        child: ForgotPasswordViewBody(),
-      ),
-    );
+    return GradientScaffold(body: SafeArea(child: ForgotPasswordViewBody()));
   }
 }
