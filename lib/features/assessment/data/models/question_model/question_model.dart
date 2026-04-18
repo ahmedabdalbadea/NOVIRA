@@ -1,28 +1,27 @@
-import 'package:equatable/equatable.dart';
+import 'metadata.dart';
+import 'question.dart';
+import 'standard_answer.dart';
 
-import 'answer.dart';
+class QuestionModel {
+  final Metadata metadata;
+  final List<StandardAnswer> standardAnswers;
+  List<Question> questions;
 
-class QuestionModel extends Equatable {
-  final String? desc;
-  final String? question;
-  final List<Answer>? answer;
-
-  const QuestionModel({this.desc, this.question, this.answer});
+  QuestionModel({
+    required this.metadata,
+    required this.standardAnswers,
+    required this.questions,
+  });
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) => QuestionModel(
-    desc: json['desc'] as String?,
-    question: json['question'] as String?,
-    answer: (json['answer'] as List<dynamic>?)
-        ?.map((e) => Answer.fromJson(e as Map<String, dynamic>))
-        .toList(),
+    metadata: json['metadata'],
+    standardAnswers: (json['standard_answers']),
+    questions: (json['questions']),
   );
 
   Map<String, dynamic> toJson() => {
-    'desc': desc,
-    'question': question,
-    'answer': answer?.map((e) => e.toJson()).toList(),
+    'metadata': metadata.toJson(),
+    'standard_answers': standardAnswers.map((e) => e.toJson()).toList(),
+    'questions': questions.map((e) => e.toJson()).toList(),
   };
-
-  @override
-  List<Object?> get props => [desc, question, answer];
 }

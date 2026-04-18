@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:novira_app/core/utils/app_router.dart';
+import 'package:novira_app/features/assessment/manager/question_cubit/question_cubit.dart';
 import 'package:novira_app/features/assessment/view/widgets/assessment_intro_card.dart';
 
 class AssessmentViewBody extends StatelessWidget {
@@ -30,6 +32,7 @@ class AssessmentViewBody extends StatelessWidget {
                 },
                 child: AssessmentIntroCard(
                   onStartPressed: () {
+                    BlocProvider.of<QuestionCubit>(context).fetchQuestions();
                     context.go(AppRouter.kQuestionView);
                   },
                 ),

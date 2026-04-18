@@ -17,7 +17,7 @@ class LinearPercentIndicatorSection extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Question 1 of 9",
+                  "Question 1 of 10",
                   style: Styles.textStyle12.copyWith(color: kDesTextColor),
                 ),
                 Spacer(),

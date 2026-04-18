@@ -9,7 +9,7 @@ part 'question_state.dart';
 class QuestionCubit extends Cubit<QuestionState> {
   QuestionCubit(this._assessementRepoImpl) : super(QuestionInitial());
   final AssessementRepoImpl _assessementRepoImpl;
-  List<QuestionModel> questionsList = [];
+  QuestionModel? questionModel;
   Future<void> fetchQuestions({String lang = "ar"}) async {
     emit(QuestionLoading());
     var data = await _assessementRepoImpl.fetchQuestion(lang);
@@ -18,7 +18,7 @@ class QuestionCubit extends Cubit<QuestionState> {
         emit(QuestionFailure(failure.errMsg));
       },
       (questions) {
-        questionsList = questions;
+        questionModel = questions;
         emit(QuestionSuccess());
       },
     );

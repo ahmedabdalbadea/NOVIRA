@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:novira_app/features/assessment/manager/question_cubit/question_cubit.dart';
 import 'package:novira_app/features/assessment/view/widgets/linear_percent_indicator_section.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_details.dart';
 
@@ -13,14 +15,24 @@ class _QuestionViewBodyState extends State<QuestionViewBody> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: [
-          const Expanded(child: SizedBox()),
-          const LinearPercentIndicatorSection(),
-          const SizedBox(height: 22),
-          const QuestionDetails(),
-          const Expanded(child: SizedBox()),
-        ],
+      child: BlocBuilder<QuestionCubit, QuestionState>(
+        builder: (context, state) {
+          if (state is QuestionSuccess) {
+            return Column(
+              children: [
+                const Expanded(child: SizedBox()),
+                const LinearPercentIndicatorSection(),
+                const SizedBox(height: 22),
+                const QuestionDetails(),
+                const Expanded(child: SizedBox()),
+              ],
+            );
+          } else if (state is QuestionFailure) {
+            return Text(state.errMsg);
+          } else {
+            return CircularProgressIndicator();
+          }
+        },
       ),
     );
   }

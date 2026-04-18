@@ -13,16 +13,11 @@ class AssessementRepoImpl implements AssessementRepo {
   AssessementRepoImpl(this._apiService);
 
   @override
-  Future<Either<Failure, List<QuestionModel>>> fetchQuestion(
-    String lang,
-  ) async {
+  Future<Either<Failure, QuestionModel>> fetchQuestion(String lang) async {
     try {
       var data = await _apiService.get(endPoint: "users/assessment?lang=$lang");
 
-      List<QuestionModel> questions = [];
-      for (var q in data) {
-        questions.add(QuestionModel.fromJson(q));
-      }
+      QuestionModel questions = QuestionModel.fromJson(data);
       return right(questions);
     } catch (e) {
       if (e is DioException) {
