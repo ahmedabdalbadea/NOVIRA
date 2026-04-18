@@ -10,6 +10,7 @@ class QuestionCubit extends Cubit<QuestionState> {
   QuestionCubit(this._assessementRepoImpl) : super(QuestionInitial());
   final AssessementRepoImpl _assessementRepoImpl;
   QuestionModel? questionModel;
+  int currentQuestion = 1;
   Future<void> fetchQuestions({String lang = "ar"}) async {
     emit(QuestionLoading());
     var data = await _assessementRepoImpl.fetchQuestion(lang);
@@ -22,5 +23,26 @@ class QuestionCubit extends Cubit<QuestionState> {
         emit(QuestionSuccess());
       },
     );
+  }
+
+  void updateAnswerValue({
+    required int questionIndex,
+    required int answersValue,
+  }) {
+    if (questionModel != null) {
+      questionModel!.questions[questionIndex].selectedValue = answersValue;
+    }
+  }
+
+  void nextQuestion() {
+    if (currentQuestion < questionModel!.questions.length) {
+      currentQuestion++;
+    }
+  }
+
+  void previousQuestion() {
+    if (currentQuestion > 0) {
+      currentQuestion--;
+    }
   }
 }

@@ -27,16 +27,16 @@ class _QuestionDetailsState extends State<QuestionDetails> {
       body: Column(
         children: [
           Text(
-            questionModel.questions![currentQuestion].desc!,
+            questionModel.questions[currentQuestion].desc,
             style: Styles.textStyle16.copyWith(color: kDesTextColor),
           ),
           const SizedBox(height: 16),
           Text(
-            questionModel.questions![currentQuestion].question!,
+            questionModel.questions[currentQuestion].question,
             style: Styles.textStyle20,
           ),
           const SizedBox(height: 32),
-          AnswersSection(answers: questionModel.standardAnswers!),
+          AnswersSection(answers: questionModel.standardAnswers),
           const SizedBox(height: 18),
           QuestionActions(),
         ],
