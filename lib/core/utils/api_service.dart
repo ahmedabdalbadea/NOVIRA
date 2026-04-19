@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 
 class ApiService {
   final Dio _dio;
-  static const String _baseUrl = "http://localhost:5000/";
+  static const String _baseUrl = "http://10.0.2.2:5000/";
   const ApiService(this._dio);
 
-  Future<dynamic> get({required String endPoint}) async {
+  Future<Map<String, dynamic>> get({required String endPoint}) async {
     Response response = await _dio.get("$_baseUrl$endPoint");
 
     return response.data;

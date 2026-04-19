@@ -1,6 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
 class SocialProviderButton extends StatelessWidget {

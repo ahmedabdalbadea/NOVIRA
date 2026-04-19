@@ -14,9 +14,13 @@ class QuestionModel {
   });
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) => QuestionModel(
-    metadata: json['metadata'],
-    standardAnswers: (json['standard_answers']),
-    questions: (json['questions']),
+    metadata: Metadata.fromJson(json['metadata']),
+    standardAnswers: (json['standard_answers'] as List)
+        .map((e) => StandardAnswer.fromJson(e))
+        .toList(),
+    questions: (json['questions'] as List)
+        .map((e) => Question.fromJson(e))
+        .toList(),
   );
 
   Map<String, dynamic> toJson() => {

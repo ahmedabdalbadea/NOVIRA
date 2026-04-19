@@ -11,7 +11,8 @@ class QuestionCubit extends Cubit<QuestionState> {
   final AssessementRepoImpl _assessementRepoImpl;
   QuestionModel? questionModel;
   int currentQuestion = 1;
-  Future<void> fetchQuestions({String lang = "ar"}) async {
+  int countCompletedAnswers = 0;
+  Future<void> fetchQuestions({String lang = "en"}) async {
     emit(QuestionLoading());
     var data = await _assessementRepoImpl.fetchQuestion(lang);
     data.fold(
@@ -31,18 +32,31 @@ class QuestionCubit extends Cubit<QuestionState> {
   }) {
     if (questionModel != null) {
       questionModel!.questions[questionIndex].selectedValue = answersValue;
+      emit(QuestionUpdate());
     }
+  }
+
+  void increaseCompletedAnswers() {
+    countCompletedAnswers++;
+  }
+
+  bool isSelected(int questionIndex) {
+    return questionModel!.questions[questionIndex].selectedValue == null
+        ? false
+        : true;
   }
 
   void nextQuestion() {
     if (currentQuestion < questionModel!.questions.length) {
-      currentQuestion++;
+      ++currentQuestion;
+      emit(QuestionUpdate());
     }
   }
 
   void previousQuestion() {
-    if (currentQuestion > 0) {
+    if (currentQuestion > 1) {
       currentQuestion--;
+      emit(QuestionUpdate());
     }
   }
 }

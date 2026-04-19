@@ -9,6 +9,8 @@ final class QuestionLoading extends QuestionState {}
 
 final class QuestionSuccess extends QuestionState {}
 
+final class QuestionUpdate extends QuestionState {}
+
 final class QuestionFailure extends QuestionState {
   final String errMsg;
 

@@ -2,38 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:novira_app/features/assessment/manager/question_cubit/question_cubit.dart';
 import 'package:novira_app/features/assessment/view/widgets/linear_percent_indicator_section.dart';
+import 'package:novira_app/features/assessment/view/widgets/question_actions.dart';
 import 'package:novira_app/features/assessment/view/widgets/question_details.dart';
 
-class QuestionViewBody extends StatefulWidget {
+class QuestionViewBody extends StatelessWidget {
   const QuestionViewBody({super.key});
 
   @override
-  State<QuestionViewBody> createState() => _QuestionViewBodyState();
-}
-
-class _QuestionViewBodyState extends State<QuestionViewBody> {
-  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: BlocBuilder<QuestionCubit, QuestionState>(
-        builder: (context, state) {
-          if (state is QuestionSuccess) {
-            return Column(
-              children: [
-                const Expanded(child: SizedBox()),
-                const LinearPercentIndicatorSection(),
-                const SizedBox(height: 22),
-                const QuestionDetails(),
-                const Expanded(child: SizedBox()),
+    return BlocBuilder<QuestionCubit, QuestionState>(
+      builder: (context, state) {
+        if (state is QuestionSuccess || state is QuestionUpdate) {
+          return Center(
+            child: Column(
+              children: const [
+                Expanded(child: SizedBox()),
+                // Progress user in Questions
+                LinearPercentIndicatorSection(),
+                SizedBox(height: 22),
+                // Questin with des and answers
+                QuestionDetails(),
+                SizedBox(height: 18),
+                // To move from question to other
+                QuestionActions(),
+                Expanded(child: SizedBox()),
               ],
-            );
-          } else if (state is QuestionFailure) {
-            return Text(state.errMsg);
-          } else {
-            return CircularProgressIndicator();
-          }
-        },
-      ),
+            ),
+          );
+        } else if (state is QuestionFailure) {
+          return Center(child: Text(state.errMsg));
+        } else {
+          return Center(child: CircularProgressIndicator());
+        }
+      },
     );
   }
 }
