@@ -33,8 +33,9 @@ class ChoicenAnswer extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: const Color(0xFFC8E6C9), width: 1.5),
       ),
-      child: RadioListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 18),
+        leading: Icon(Icons.radio_button_checked, color: kEndSecGradientColor),
         title: Text(
           title,
           style: Styles.textStyle16.copyWith(
@@ -42,9 +43,6 @@ class ChoicenAnswer extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        value: value,
-        controlAffinity: ListTileControlAffinity.leading,
-        activeColor: kEndSecGradientColor,
       ),
     );
   }
@@ -70,14 +68,13 @@ class UnChoicenAnswer extends StatelessWidget {
           ),
         ],
       ),
-      child: RadioListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 18),
+        leading: Icon(Icons.radio_button_unchecked, color: Colors.grey),
         title: Text(
           title,
           style: Styles.textStyle16.copyWith(color: kDesTextColor),
         ),
-        value: value,
-        controlAffinity: ListTileControlAffinity.leading,
       ),
     );
   }
