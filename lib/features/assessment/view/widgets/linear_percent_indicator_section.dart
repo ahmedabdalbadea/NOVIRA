@@ -33,7 +33,7 @@ class LinearPercentIndicatorSection extends StatelessWidget {
                     Spacer(),
                     // Progrees Precent
                     Text(
-                      "${((currentQuestion / questionsCount) * 100).toInt()}"
+                      "${((questionCubit.countCompletedAnswers / questionsCount) * 100).toInt()}"
                       "%",
                       style: Styles.textStyle12.copyWith(color: kDesTextColor),
                     ),
@@ -43,7 +43,7 @@ class LinearPercentIndicatorSection extends StatelessWidget {
               const SizedBox(height: 12),
               LinearPercentIndicator(
                 lineHeight: 8.0,
-                percent: currentQuestion / questionsCount,
+                percent: questionCubit.countCompletedAnswers / questionsCount,
                 backgroundColor: kPrimaryColor,
                 linearGradient: LinearGradient(
                   colors: [kStartSecGradientColor, kEndSecGradientColor],
