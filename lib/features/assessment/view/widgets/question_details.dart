@@ -18,9 +18,7 @@ class QuestionDetails extends StatelessWidget {
         buildWhen: (previous, current) => current is QuestionUpdate,
         builder: (context, state) {
           QuestionModel questionModel = questionCubit.questionModel!;
-          // currentQuestion decalred with value 1
-          // currentQuestion - 1 for index in question list
-          int currentQuestion = questionCubit.currentQuestion - 1;
+          int currentQuestion = questionCubit.currentQuestion;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

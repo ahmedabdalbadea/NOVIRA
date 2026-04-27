@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_router.dart';
+import 'package:novira_app/core/utils/functions/show_snack_bar_error.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/assessment/manager/question_cubit/question_cubit.dart';
 import 'package:novira_app/features/assessment/view/widgets/circle_elevated_button.dart';
@@ -34,11 +37,21 @@ class QuestionActions extends StatelessWidget {
                 gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
                 title: "Next",
                 onPressed: () {
-                  if (questionCubit.currentQuestion ==
+                  print("current Question =>${questionCubit.currentQuestion}");
+                  print(
+                    "countCompletedAnswers ==>${questionCubit.countCompletedAnswers}",
+                  );
+                  if (questionCubit.countCompletedAnswers ==
                       questionCubit.questionModel!.metadata.totalQuestions) {
-                    // navigate to next screen
+                    GoRouter.of(context).push(AppRouter.kAssessmentView);
                   } else {
-                    questionCubit.nextQuestion(); // go to next question
+                    if (questionCubit.currentQuestion ==
+                        questionCubit.questionModel!.metadata.totalQuestions -
+                            1) {
+                      showSnackBarError(context, "Please Complete Questions!");
+                    } else {
+                      questionCubit.nextQuestion();
+                    } // go to next question
                   }
                 },
               ),
