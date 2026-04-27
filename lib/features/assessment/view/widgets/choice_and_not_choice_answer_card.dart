@@ -14,9 +14,34 @@ class AnswerCard extends StatelessWidget {
   final int value;
   @override
   Widget build(BuildContext context) {
-    return isChoicen
-        ? ChoicenAnswer(title: title, value: value)
-        : UnChoicenAnswer(title: title, value: value);
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 300),
+      transitionBuilder: (Widget child, Animation<double> animation) {
+        return FadeTransition(
+          opacity: animation,
+          child: ScaleTransition(
+            scale: animation.drive(
+              Tween<double>(
+                begin: 0.96,
+                end: 1.0,
+              ).chain(CurveTween(curve: Curves.easeOutCubic)),
+            ),
+            child: child,
+          ),
+        );
+      },
+      child: isChoicen
+          ? ChoicenAnswer(
+              key: const ValueKey('selected'),
+              title: title,
+              value: value,
+            )
+          : UnChoicenAnswer(
+              key: const ValueKey('unselected'),
+              title: title,
+              value: value,
+            ),
+    );
   }
 }
 
