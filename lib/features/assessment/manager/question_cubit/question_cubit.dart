@@ -32,7 +32,6 @@ class QuestionCubit extends Cubit<QuestionState> {
   }) {
     if (questionModel != null) {
       questionModel!.questions[questionIndex].selectedValue = answersValue;
-      emit(QuestionUpdate());
     }
   }
 
