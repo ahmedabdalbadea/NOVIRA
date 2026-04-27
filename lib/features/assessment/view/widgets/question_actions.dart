@@ -12,35 +12,39 @@ class QuestionActions extends StatelessWidget {
     final QuestionCubit questionCubit = context.read<QuestionCubit>();
     return SizedBox(
       width: MediaQuery.widthOf(context) * 0.9,
-      child: Row(
-        children: [
-          // button for go to pervious question
-          Expanded(
-            flex: 2,
-            child: CircleElevatedButton(
-              child: Icon(Icons.arrow_back),
-              onPressed: () {
-                questionCubit.previousQuestion();
-              },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: Row(
+          children: [
+            // button for go to pervious question
+            Expanded(
+              flex: 1,
+              child: CircleElevatedButton(
+                child: Icon(Icons.arrow_back),
+                onPressed: () {
+                  questionCubit.previousQuestion();
+                },
+              ),
             ),
-          ),
-          // button for go to next question
-          Expanded(
-            flex: 5,
-            child: CustomElevatedButton(
-              gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
-              title: "Next",
-              onPressed: () {
-                if (questionCubit.currentQuestion ==
-                    questionCubit.questionModel!.metadata.totalQuestions) {
-                  // navigate to next screen
-                } else {
-                  questionCubit.nextQuestion(); // go to next question
-                }
-              },
+            const SizedBox(width: 25),
+            // button for go to next question
+            Expanded(
+              flex: 5,
+              child: CustomElevatedButton(
+                gradientColors: [kStartSecGradientColor, kEndSecGradientColor],
+                title: "Next",
+                onPressed: () {
+                  if (questionCubit.currentQuestion ==
+                      questionCubit.questionModel!.metadata.totalQuestions) {
+                    // navigate to next screen
+                  } else {
+                    questionCubit.nextQuestion(); // go to next question
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
