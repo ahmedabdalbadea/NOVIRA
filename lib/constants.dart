@@ -11,6 +11,15 @@ const kEndSecGradientColor = Color(0xFF8DE09C);
 const kStartThiGradientColor = Color(0xFFA5A4D9);
 const kEndThiGradientColor = Color(0xFFEAA08F);
 
+const kPrimaryGradientColors = [
+  kStartPrimaryGradientColor,
+  kEndPrimaryGradientColor,
+];
+
+const kSecGradientColors = [kStartSecGradientColor, kEndSecGradientColor];
+
+const kThiGradientColors = [kStartThiGradientColor, kEndThiGradientColor];
+
 const kDesTextColor = Colors.black54;
 const kInter = "Inter";
 const kMoodsList = [
