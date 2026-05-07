@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/models/mood_model.dart';
+import 'package:novira_app/core/utils/functions/get_translated_mood.dart';
 import 'package:novira_app/core/utils/styles.dart';
 
 class GridViewMoodItem extends StatelessWidget {
   const GridViewMoodItem({
     super.key,
-    required this.moodImage,
     required this.mood,
     required this.isSelected,
   });
-  final String moodImage;
-  final String mood;
+  final MoodModel mood;
 
   final bool isSelected;
 
@@ -32,9 +32,9 @@ class GridViewMoodItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(moodImage),
+              Image.asset(mood.moodImage),
               Text(
-                mood,
+                getTranslatedMood(context, mood.mood),
                 style: Styles.textStyle12.copyWith(color: kDesTextColor),
               ),
             ],
