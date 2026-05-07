@@ -3,6 +3,7 @@ import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/models/mood_model.dart';
 import 'package:novira_app/core/utils/functions/get_translated_mood.dart';
 import 'package:novira_app/core/utils/styles.dart';
+import 'package:novira_app/core/widgets/mood_item_content.dart';
 
 class GridViewMoodItem extends StatelessWidget {
   const GridViewMoodItem({
@@ -29,16 +30,7 @@ class GridViewMoodItem extends StatelessWidget {
         child: Card(
           color: Colors.white,
           shadowColor: Colors.black.withValues(alpha: 0.04),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(mood.moodImage),
-              Text(
-                getTranslatedMood(context, mood.mood),
-                style: Styles.textStyle12.copyWith(color: kDesTextColor),
-              ),
-            ],
-          ),
+          child: MoodItemContent(mood: mood),
         ),
       ),
     );
