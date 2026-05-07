@@ -48,6 +48,7 @@ class QuestionActions extends StatelessWidget {
   void vaildateQuestions(QuestionCubit questionCubit, BuildContext context) {
     if (questionCubit.countCompletedAnswers ==
         questionCubit.questionModel!.metadata.totalQuestions) {
+      questionCubit.completeAssessment();
       // navigate to next screen
     } else {
       checkProgress(

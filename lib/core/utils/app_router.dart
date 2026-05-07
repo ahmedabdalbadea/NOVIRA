@@ -87,6 +87,7 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeView,
         pageBuilder: (context, state) {
+          // int totalScore = state.extra as int;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: const HomeView(),
