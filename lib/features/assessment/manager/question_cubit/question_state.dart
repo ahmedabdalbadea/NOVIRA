@@ -16,3 +16,8 @@ final class QuestionFailure extends QuestionState {
 
   QuestionFailure(this.errMsg);
 }
+
+final class QuestionCompleted extends QuestionState {
+  final int totalScore;
+  QuestionCompleted({required this.totalScore});
+}
