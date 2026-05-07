@@ -7,6 +7,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold();
+    return GradientScaffold(body: SafeArea(child: HomeViewBody()));
   }
 }
