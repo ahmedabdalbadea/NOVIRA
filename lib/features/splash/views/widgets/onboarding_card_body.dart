@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 
 class OnboardingCardBody extends StatelessWidget {
-  const OnboardingCardBody({super.key, required this.body});
+  const OnboardingCardBody({super.key, required this.body, this.padding});
   final Widget body;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       width: MediaQuery.sizeOf(context).width * 0.90,
-      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
       decoration: _buildDecoration(),
       child: body,
     );
