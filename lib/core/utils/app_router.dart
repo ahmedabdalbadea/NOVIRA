@@ -6,6 +6,7 @@ import 'package:novira_app/features/auth/views/forgot_password_view.dart';
 import 'package:novira_app/features/auth/views/log_in_view.dart';
 import 'package:novira_app/features/auth/views/sign_up_view.dart';
 import 'package:novira_app/features/auth/views/verify_email_view.dart';
+import 'package:novira_app/features/home/view/home_view.dart';
 import 'package:novira_app/features/splash/views/splash_view.dart';
 
 abstract class AppRouter {
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const kVerifyEmailView = '/verifyEmailView';
   static const kAssessmentView = '/assessmentView';
   static const kQuestionView = '/questionView';
+  static const kHomeView = '/homeView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -78,6 +80,16 @@ abstract class AppRouter {
           return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: const VerifyEmailView(),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: kHomeView,
+        pageBuilder: (context, state) {
+          return navigateWithSlidingAnimation(
+            key: state.pageKey,
+            child: const HomeView(),
           );
         },
       ),
