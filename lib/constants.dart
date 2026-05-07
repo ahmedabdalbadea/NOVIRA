@@ -13,11 +13,3 @@ const kEndThiGradientColor = Color(0xFFEAA08F);
 
 const kDesTextColor = Colors.black54;
 const kInter = "Inter";
-const kMoodsList = [
-  "happyMood",
-  "calmMood",
-  "neutralMood",
-  "sadMood",
-  "anxiousMood",
-  "overwhelmedMood",
-];
