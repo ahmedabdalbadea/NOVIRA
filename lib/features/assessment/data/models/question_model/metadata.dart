@@ -4,7 +4,7 @@ class Metadata {
   final int frequencyDays;
   dynamic lastAssessmentDate;
   dynamic nextAssessmentDate;
-  final int totalScore;
+  int totalScore;
 
   Metadata({
     required this.totalQuestions,

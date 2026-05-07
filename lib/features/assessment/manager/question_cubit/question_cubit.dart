@@ -58,4 +58,17 @@ class QuestionCubit extends Cubit<QuestionState> {
       emit(QuestionUpdate());
     }
   }
+
+  int calculateTotalScore() {
+    return questionModel!.questions.fold(
+      0,
+      (sum, q) => sum + (q.selectedValue ?? 0),
+    );
+  }
+
+  void completeAssessment() {
+    final score = calculateTotalScore();
+    questionModel!.metadata.totalScore = score; // حفظ الـ score في الـ model
+    emit(QuestionCompleted(totalScore: score));
+  }
 }
