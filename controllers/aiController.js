@@ -1,4 +1,4 @@
-// controllers/ai.controller.js
+
 
 const {OpenAI} = require('openai');
 
