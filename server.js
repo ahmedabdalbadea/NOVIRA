@@ -5,9 +5,12 @@ const logger = require('./middleware/logger');
 const routes = require('./routes/userRoutes');
 const AiController = require('./controllers/aiController.js');
 const dbConnect = require('./controllers/dbConnect.js');
+const compression = require('compression');
+
 
 
 app.use(express.json());
+app.use(compression());
 app.use((req, res, next) => {
     const supportedLangs = ['en', 'ar'];
     const requested = req.query.lang;
