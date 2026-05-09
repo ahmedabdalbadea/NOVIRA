@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:novira_app/constants.dart';
-import 'package:novira_app/core/utils/styles.dart';
-import 'package:novira_app/core/widgets/custom_elevated_button.dart';
-import 'package:novira_app/features/home/view/data/models/weekly_assessment_model.dart';
+import 'package:novira_app/features/home/data/models/weekly_assessment_model.dart';
+import 'package:novira_app/features/home/view/widgets/ai_card.dart';
 import 'package:novira_app/features/home/view/widgets/daily_support_card.dart';
 import 'package:novira_app/features/home/view/widgets/weekly_progress_chart.dart';
 import 'package:novira_app/features/home/view/widgets/selector_mood_list.dart';
@@ -23,6 +21,10 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: CustomScrollView(
+        scrollBehavior: ScrollBehavior().copyWith(
+          overscroll: false,
+          physics: const BouncingScrollPhysics(),
+        ),
         slivers: [
           SliverToBoxAdapter(child: UserGreeting()),
           SliverToBoxAdapter(
@@ -41,6 +43,8 @@ class HomeViewBody extends StatelessWidget {
               child: DailySupportCard(),
             ),
           ),
+
+          SliverToBoxAdapter(child: AiCard()),
         ],
       ),
     );
