@@ -5,8 +5,8 @@ import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
 class DailySupportCard extends StatelessWidget {
-  const DailySupportCard({super.key});
-
+  const DailySupportCard({super.key, required this.onPressed});
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return OnboardingCardBody(
@@ -33,6 +33,7 @@ class DailySupportCard extends StatelessWidget {
           CustomElevatedButton(
             gradientColors: [kStartThiGradientColor, kEndThiGradientColor],
             title: "Start Today's Exercise",
+            onPressed: onPressed,
           ),
         ],
       ),

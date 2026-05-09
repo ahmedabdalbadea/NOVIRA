@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/features/home/data/models/weekly_assessment_model.dart';
 import 'package:novira_app/features/home/view/widgets/ai_card.dart';
 import 'package:novira_app/features/home/view/widgets/daily_support_card.dart';
@@ -40,7 +42,11 @@ class HomeViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 24.0),
-              child: DailySupportCard(),
+              child: DailySupportCard(
+                onPressed: () {
+                  context.go(AppRouter.kAssessmentView);
+                },
+              ),
             ),
           ),
 
