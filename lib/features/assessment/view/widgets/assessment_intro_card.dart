@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/assessment/view/widgets/assessment_preview_panel.dart';
@@ -73,11 +75,16 @@ class AssessmentIntroCard extends StatelessWidget {
             onPressed: onStartPressed,
           ),
           const SizedBox(height: 14),
-          Text(
-            'You can skip for now',
-            style: Styles.textStyle14.copyWith(
-              color: kDesTextColor,
-              fontWeight: FontWeight.w500,
+          GestureDetector(
+            onTap: () {
+              context.go(AppRouter.kHomeView);
+            },
+            child: Text(
+              'You can skip for now',
+              style: Styles.textStyle14.copyWith(
+                color: kDesTextColor,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ],
