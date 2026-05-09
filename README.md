@@ -43,7 +43,7 @@ These routes handle user registration and sessions.
 ```
 ---
 
-### User Assessment & Scores (/users)
+### User Assessment & Scores (/users/assessment)
 Endpoints for retrieving and updating user-specific assessment data.
 
 #### `/users/assessment?lang='ar|en'`: 
