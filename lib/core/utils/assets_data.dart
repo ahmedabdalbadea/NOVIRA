@@ -2,6 +2,7 @@ import 'package:novira_app/core/models/mood_model.dart';
 
 abstract class AssetsData {
   static const kLogo = "assets/images/logo.png";
+  static const kAiIcon = "assets/images/ai_icon.png";
 
   static const kMoodsList = [
     MoodModel(moodImage: "assets/images/happy.png", mood: "happyMood"),

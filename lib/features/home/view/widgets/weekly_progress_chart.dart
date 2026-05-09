@@ -2,7 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/styles.dart';
-import 'package:novira_app/features/home/view/data/models/weekly_assessment_model.dart';
+import 'package:novira_app/features/home/data/models/weekly_assessment_model.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
 class WeeklyProgressChart extends StatelessWidget {
