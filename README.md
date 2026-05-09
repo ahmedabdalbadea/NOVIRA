@@ -73,12 +73,24 @@ Both have this structure:
 - **Expected Request Body Structure**:
 ```json
 {
-  "phone": "String",
-  "date_of_birth": "String",
-  "short_bio": "String",
-  "current_mood": "String",
-  "weekly_scores": { "date": "String", "score": "Number" },
-  "monthly_scores": "Array"
+  "profile_image": null,
+  "name": "",
+  "email": "",
+  "password": "",
+  "phone": "",
+  "date_of_birth": "",
+  "short_bio": "",
+  "current_mode": "",
+  "weekly_scores": [
+    {
+      "date": "",
+      "score": null
+    }
+  ],
+  "monthly_scores": [],
+  "moods": [
+    "happy"
+  ]
 }
 ```
 #### `/users/assessment/getScore` :
