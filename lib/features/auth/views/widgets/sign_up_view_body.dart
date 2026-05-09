@@ -7,8 +7,8 @@ import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.da
 import 'package:novira_app/generated/l10n.dart';
 
 class SignUpViewBody extends StatelessWidget {
-  const SignUpViewBody({super.key, required this.mood});
-  final String mood;
+  const SignUpViewBody({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -25,9 +25,9 @@ class SignUpViewBody extends StatelessWidget {
                 style: Styles.textStyle24,
               ),
               const SizedBox(height: 24),
-              const UserInputsSection(),
+              UserInputsSection(moodMap: moodMap),
               const SizedBox(height: 24),
-              NavigateToLogInSection(mood: mood),
+              NavigateToLogInSection(moodMap: moodMap),
             ],
           ),
         ),

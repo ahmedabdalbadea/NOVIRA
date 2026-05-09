@@ -9,8 +9,8 @@ import 'package:novira_app/features/auth/views/widgets/forgot_password_button.da
 import 'package:novira_app/generated/l10n.dart';
 
 class LogInUserInputsSection extends StatefulWidget {
-  const LogInUserInputsSection({super.key});
-
+  const LogInUserInputsSection({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
   @override
   State<LogInUserInputsSection> createState() => _LogInUserInputsSectionState();
 }
@@ -41,7 +41,7 @@ class _LogInUserInputsSectionState extends State<LogInUserInputsSection> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                context.go(AppRouter.kAssessmentView);
+                context.go(AppRouter.kAssessmentView, extra: widget.moodMap);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

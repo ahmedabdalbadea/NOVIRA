@@ -9,8 +9,8 @@ import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.da
 import 'package:novira_app/generated/l10n.dart';
 
 class VerifyEmailViewBody extends StatelessWidget {
-  const VerifyEmailViewBody({super.key});
-
+  const VerifyEmailViewBody({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -84,7 +84,7 @@ class VerifyEmailViewBody extends StatelessWidget {
                       ],
                       title: S.of(context).button_open_email,
                       onPressed: () {
-                        context.go(AppRouter.kAssessmentView);
+                        context.go(AppRouter.kAssessmentView, extra: moodMap);
                       },
                     ),
                     const SizedBox(height: 16),

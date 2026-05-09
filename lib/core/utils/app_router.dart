@@ -28,18 +28,22 @@ abstract class AppRouter {
       GoRoute(
         path: kAssessmentView,
         pageBuilder: (context, state) {
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: const AssessmentView(),
+            child: AssessmentView(moodMap: moodMap),
           );
         },
       ),
       GoRoute(
         path: kQuestionView,
         pageBuilder: (context, state) {
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: const QuestionView(),
+            child: QuestionView(moodMap: moodMap),
           );
         },
       ),
@@ -47,10 +51,11 @@ abstract class AppRouter {
       GoRoute(
         path: kSignUpView,
         pageBuilder: (context, state) {
-          final String mood = state.extra as String;
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: SignUpView(mood: mood),
+            child: SignUpView(moodMap: moodMap),
           );
         },
       ),
@@ -58,10 +63,11 @@ abstract class AppRouter {
       GoRoute(
         path: kLogInView,
         pageBuilder: (context, state) {
-          final String mood = state.extra as String;
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: LogInView(mood: mood),
+            child: LogInView(moodMap: moodMap),
           );
         },
       ),
@@ -77,9 +83,11 @@ abstract class AppRouter {
       GoRoute(
         path: kVerifyEmailView,
         pageBuilder: (context, state) {
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: const VerifyEmailView(),
+            child: VerifyEmailView(moodMap: moodMap),
           );
         },
       ),
@@ -87,10 +95,12 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeView,
         pageBuilder: (context, state) {
+          final Map<String, dynamic> moodMap =
+              state.extra as Map<String, dynamic>;
           // int totalScore = state.extra as int;
           return navigateWithSlidingAnimation(
             key: state.pageKey,
-            child: const HomeView(),
+            child: HomeView(moodMap: moodMap),
           );
         },
       ),

@@ -3,9 +3,13 @@ import 'package:novira_app/core/models/mood_model.dart';
 import 'package:novira_app/core/widgets/mood_item_content.dart';
 
 class MoodSelectorListItem extends StatelessWidget {
-  const MoodSelectorListItem({super.key, required this.mood});
+  const MoodSelectorListItem({
+    super.key,
+    required this.mood,
+    this.seleted = false,
+  });
   final MoodModel mood;
-
+  final bool seleted;
   @override
   Widget build(BuildContext context) {
     return Container(

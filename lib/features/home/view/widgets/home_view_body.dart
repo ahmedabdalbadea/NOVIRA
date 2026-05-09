@@ -10,8 +10,9 @@ import 'package:novira_app/features/home/view/widgets/user_greeting.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key, this.moodIndex});
-  final int? moodIndex;
+  const HomeViewBody({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
+
   static final mockData = [
     WeeklyAssessment(date: DateTime(2025, 1, 1), totalScore: 27 - 18),
     WeeklyAssessment(date: DateTime(2025, 1, 8), totalScore: 27 - 14),
@@ -33,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 24),
               child: OnboardingCardBody(
-                body: SelectorMoodList(moodIndex: moodIndex),
+                body: SelectorMoodList(moodIndex: moodMap["index"]),
                 padding: EdgeInsets.symmetric(vertical: 16, horizontal: 6),
               ),
             ),

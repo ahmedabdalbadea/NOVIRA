@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/app_router.dart';
+import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/functions/show_snack_bar_error.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
@@ -51,14 +52,14 @@ class OnboardingCardActions extends StatelessWidget {
   }
 
   void checkMoodAndNavigate(BuildContext context, String location) {
-    String? mood = Provider.of<MoodProvider>(
-      context,
-      listen: false,
-    ).selectedMood;
-    if (mood == null) {
+    MoodProvider? mood = Provider.of<MoodProvider>(context, listen: false);
+    if (mood.selectedMood == null) {
       showSnackBarError(context, S.of(context).pleaseSelectMood);
     } else {
-      GoRouter.of(context).push(location, extra: mood);
+      GoRouter.of(context).push(
+        location,
+        extra: {"mood": mood.selectedMood, "index": mood.selectedItemIndex},
+      );
     }
   }
 }

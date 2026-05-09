@@ -5,7 +5,7 @@ import 'package:novira_app/features/home/view/widgets/nav_button_mood_selector.d
 
 class SelectorMoodList extends StatefulWidget {
   const SelectorMoodList({super.key, required this.moodIndex});
-  final int? moodIndex;
+  final int moodIndex;
   @override
   State<SelectorMoodList> createState() => _SelectorMoodListState();
 }

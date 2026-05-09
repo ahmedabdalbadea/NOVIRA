@@ -4,8 +4,8 @@ import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/features/assessment/view/widgets/assessment_intro_card.dart';
 
 class AssessmentViewBody extends StatelessWidget {
-  const AssessmentViewBody({super.key});
-
+  const AssessmentViewBody({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -30,7 +30,7 @@ class AssessmentViewBody extends StatelessWidget {
                 },
                 child: AssessmentIntroCard(
                   onStartPressed: () {
-                    context.go(AppRouter.kQuestionView);
+                    context.go(AppRouter.kQuestionView, extra: moodMap);
                   },
                 ),
               ),

@@ -3,12 +3,13 @@ import 'package:novira_app/core/widgets/gradient_scaffold.dart';
 import 'package:novira_app/features/auth/views/widgets/sign_up_view_body.dart';
 
 class SignUpView extends StatelessWidget {
-  const SignUpView({super.key, required this.mood});
-  final String mood;
+  const SignUpView({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
+
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
-      body: SafeArea(child: SignUpViewBody(mood: mood)),
+      body: SafeArea(child: SignUpViewBody(moodMap: moodMap)),
     );
   }
 }

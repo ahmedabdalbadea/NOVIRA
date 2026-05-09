@@ -7,8 +7,8 @@ import 'package:novira_app/features/assessment/view/widgets/question_loading_ind
 import 'package:novira_app/features/assessment/view/widgets/question_stepper_content.dart';
 
 class QuestionViewBody extends StatelessWidget {
-  const QuestionViewBody({super.key});
-
+  const QuestionViewBody({super.key, required this.moodMap});
+  final Map<String, dynamic> moodMap;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<QuestionCubit, QuestionState>(
@@ -24,7 +24,10 @@ class QuestionViewBody extends StatelessWidget {
       listener: (BuildContext context, QuestionState state) {
         if (state is QuestionCompleted) {
           // ✅ Navigate للـ Home وبعّت الـ score
-          context.go(AppRouter.kHomeView, extra: state.totalScore);
+          context.go(
+            AppRouter.kHomeView,
+            extra: {...moodMap, "total_score": state.totalScore},
+          );
         }
       },
     );
