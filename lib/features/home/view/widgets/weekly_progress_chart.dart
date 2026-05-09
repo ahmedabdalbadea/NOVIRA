@@ -94,9 +94,12 @@ class WeeklyProgressChart extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Text(
-            _getProgressMessage(),
-            style: Styles.textStyle14.copyWith(color: kDesTextColor),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              _getProgressMessage(),
+              style: Styles.textStyle14.copyWith(color: kDesTextColor),
+            ),
           ),
         ],
       ),
