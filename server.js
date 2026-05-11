@@ -1,62 +1,64 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const app = express();
-const corsOptions=require('./controllers/CORS_Options');
-const cors=require("cors");
-const logger = require('./middleware/logger');
-const routes = require('./routes/userRoutes');
-const AiController = require('./controllers/aiController.js');
-const dbConnect = require('./controllers/dbConnect.js');
+import application from "./configurations/application.js";
+import mongoose from "mongoose";
+import { env } from "./configurations/env.js";
+import { dbConnect } from "./configurations/database.js";
+import { logger } from "./utils/logger.util.js";
 
+let server;
 
+const gracefulShutdown = async (signal) => {
+    logger.warn(`\nReceived ${signal}. Starting graceful shutdown...`);
+    
+    if (server) {
+        server.close(async () => {
+            logger.warn("HTTP server closed.");
+            
+            try {
+                // Close database connection
+                await mongoose.connection.close(false);
+                logger.warn("MongoDB connection closed.");
+                
+                logger.warn("Shutdown complete. Goodbye!");
+                process.exit(0);
+            } catch (err) {
+                logger.error("Error during DB closure:", err);
+                process.exit(1);
+            }
+        });
+    } else {
+        process.exit(0);
+    }
+};
 
+// --- Process Listeners ---
 
-const mongoose= require("mongoose");
-const cookieParser = require("cookie-parser");
-dotenv.config();
-const PORT = process.env.PORT;
+// Handle standard termination signals
+process.on("SIGTERM", () => gracefulShutdown("SIGTERM")); // Sent by tools like Heroku/Docker
+process.on("SIGINT", () => gracefulShutdown("SIGINT"));   // Sent on Ctrl+C
 
-
-
-
-
-app.use(express.json());
-app.use((req, res, next) => {
-    const supportedLangs = ['en', 'ar'];
-    const requested = req.query.lang;
-
-    // @ts-ignore
-    req.lang = supportedLangs.includes(requested) ? requested : 'en';
-    next();
+// Handle unexpected crashes
+process.on("uncaughtException", (error) => {
+    logger.error("FATAL: Uncaught Exception!", error);
+    process.exit(1); 
 });
 
-
-app.use(logger);
-dotenv.config();
-
-//Connect to MongoDB
-dbConnect();
-
-
-app.use(cors(corsOptions));
-app.use(cookieParser());
-app.use(express.json());
-
-app.use("/users",require("./routes/userRoutes"));
-
-app.use("/auth",require("./routes/authRoutes"));
-
-
-
-
-mongoose.connection.once("open",() =>{
-    console.log("connected to MongoDB")
-    app.listen(PORT, ()=>{
-        console.log(`Server running on http://localhost:${PORT}`);
-    });
+process.on("unhandledRejection", (reason) => {
+    logger.error("UNHANDLED REJECTION:", reason);
+    gracefulShutdown("unhandledRejection");
 });
 
-mongoose.connection.on("error",(err)=>{
-    console.log(err);
-});
+// --- Boot Sequence ---
 
+const startServer = async () => {
+    try {
+        await dbConnect();
+        server = application.listen(env.PORT, () => {
+            logger.info(`🚀 Server pulsing on port ${env.PORT}`);
+        });
+    } catch (error) {
+        logger.error("Failed to start server:", error);
+        process.exit(1);
+    }
+};
+
+startServer();

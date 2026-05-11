@@ -2,17 +2,12 @@ const mongoose = require('mongoose');
 const {User} = require('../models/userModel.js');
 const {body, validationResult} = require('express-validator');
 const { validateInput, validationRules } = require('../validation/userValidation')
-const dbConnect = require('./dbConnect.js');
+const dbConnect = require('../configurations/database.js');
 const assess = require('../models/userAssessment.js');
 
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
 
-
-/**
- * @type {import("express").RequestHandler}
- */
-  
 const signUp = async(req, res) => {
     
     const {name, password, email} = req.body;
