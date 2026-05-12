@@ -23,10 +23,19 @@ class QuestionViewBody extends StatelessWidget {
       },
       listener: (BuildContext context, QuestionState state) {
         if (state is QuestionCompleted) {
-          // ✅ Navigate للـ Home وبعّت الـ score
+          final cubit = context.read<QuestionCubit>();
+          final maxScore = (cubit.questionModel?.questions.length ?? 1) * 3;
+          final totalQuestions = cubit.questionModel?.metadata.totalQuestions ?? (cubit.questionModel?.questions.length ?? 0);
+          final assessmentType = cubit.questionModel?.metadata.type ?? '';
+
           context.go(
-            AppRouter.kHomeView,
-            extra: {...moodMap, "total_score": state.totalScore},
+            AppRouter.kResultView,
+            extra: {
+              'totalScore': state.totalScore,
+              'maxScore': maxScore,
+              'totalQuestions': totalQuestions,
+              'assessmentType': assessmentType,
+            },
           );
         }
       },

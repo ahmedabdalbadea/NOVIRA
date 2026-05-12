@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:novira_app/features/assessment/view/assessment_view.dart';
 import 'package:novira_app/features/assessment/view/question_view.dart';
+import 'package:novira_app/features/assessment/view/result_view.dart';
 import 'package:novira_app/features/auth/views/forgot_password_view.dart';
 import 'package:novira_app/features/auth/views/log_in_view.dart';
 import 'package:novira_app/features/auth/views/sign_up_view.dart';
@@ -16,6 +17,7 @@ abstract class AppRouter {
   static const kVerifyEmailView = '/verifyEmailView';
   static const kAssessmentView = '/assessmentView';
   static const kQuestionView = '/questionView';
+  static const kResultView = '/resultView';
   static const kHomeView = '/homeView';
   static final router = GoRouter(
     routes: [
@@ -44,6 +46,26 @@ abstract class AppRouter {
           return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: QuestionView(moodMap: moodMap),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: kResultView,
+        pageBuilder: (context, state) {
+          final Map<String, dynamic> extra = state.extra as Map<String, dynamic>;
+          final int totalScore = extra['totalScore'] as int;
+          final int maxScore = extra['maxScore'] as int;
+          final int totalQuestions = extra['totalQuestions'] as int;
+          final String assessmentType = extra['assessmentType'] as String;
+          return navigateWithSlidingAnimation(
+            key: state.pageKey,
+            child: ResultView(
+              totalScore: totalScore,
+              maxScore: maxScore,
+              totalQuestions: totalQuestions,
+              assessmentType: assessmentType,
+            ),
           );
         },
       ),
