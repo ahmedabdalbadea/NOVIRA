@@ -14,22 +14,37 @@ const jwt=require("jsonwebtoken");
  */
   
 const signUp = async(req, res) => {
-    
-    const {name, password, email} = req.body;
+    const {name, password, email, confirmPassword} = req.body;
     if(!name || !password || !email){
         return res.status(400).json({message:"All fields are required"});
-
     }
-    const foundUser= await User.findOne({email}).exec();
+    if (confirmPassword && confirmPassword !== password) {
+        return res.status(400).json({ message: "Passwords do not match" });
+    }
+
+    const normalizedEmail = String(email).trim().toLowerCase();
+    const normalizedName = String(name).trim();
+
+    const foundUser= await User.findOne({ email: normalizedEmail }).exec();
     if(foundUser){
-        return res.status(401).json({message:"User already exists"});
+        return res.status(409).json({message:"User already exists"});
     }
     const hashedPassword= await bcrypt.hash(password,10);
-    const newUser = await User.create({
-          name,
-          password: hashedPassword,
-          email
-    });
+    let newUser;
+    try {
+        newUser = await User.create({
+            name: normalizedName,
+            password: hashedPassword,
+            email: normalizedEmail
+        });
+    } catch (err) {
+        // handle duplicate key race (E11000)
+        if (err && err.code === 11000) {
+            return res.status(409).json({ message: 'User already exists' });
+        }
+        console.error('Error creating user:', err);
+        return res.status(500).json({ message: 'Failed to create user' });
+    }
     const accessToken=jwt.sign({
         UserInfo:{
             id:newUser._id
