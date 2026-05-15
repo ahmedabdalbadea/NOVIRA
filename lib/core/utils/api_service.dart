@@ -5,13 +5,13 @@ class ApiService {
   static const String _baseUrl = "http://10.0.2.2:5000/";
   const ApiService(this._dio);
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
+  Future<dynamic> get({required String endPoint}) async {
     Response response = await _dio.get("$_baseUrl$endPoint");
 
     return response.data;
   }
 
-  Future<Map<String, dynamic>> post({
+  Future<dynamic> post({
     required String endPoint,
     required Map<String, dynamic> data,
   }) async {
