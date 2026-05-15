@@ -46,6 +46,27 @@ app.use("/users",require("./routes/userRoutes"));
 
 app.use("/auth",require("./routes/authRoutes"));
 
+// Backwards-compatible direct endpoints
+const userController = require('./controllers/userController');
+app.post('/users/register', userController.signUp);
+app.post('/users/login', userController.login);
+
+// Debug route: list registered routes (temporary)
+app.get('/debug/routes', (req, res) => {
+    const routes = [];
+    app._router.stack.forEach((middleware) => {
+        if (middleware.route) { // routes registered directly on the app
+            routes.push(middleware.route.path);
+        } else if (middleware.name === 'router') { // router middleware 
+            middleware.handle.stack.forEach(function(handler){
+                const route = handler.route && handler.route.path;
+                if(route) routes.push(route);
+            });
+        }
+    });
+    res.json({routes});
+});
+
 
 
 

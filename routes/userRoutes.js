@@ -5,6 +5,10 @@ const verifyJWT = require('../middleware/verifyJWT.js');
 const router = express.Router();
 
 
+// Auth routes (also reachable under /auth)
+router.post('/register', validationRules, validateInput, signUp);
+router.post('/login', validationRulesLogin, validateInput, login);
+
 //User assessment
 router.get('/assessment', handleAssessment)
 //User Score
