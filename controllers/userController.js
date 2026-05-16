@@ -29,7 +29,7 @@ const signUp = async(req, res) => {
     if(foundUser){
         return res.status(409).json({message:"User already exists"});
     }
-    const hashedPassword= await bcrypt.hash(password,10);
+    const hashedPassword = await bcrypt.hash(password,10);
     let newUser;
     try {
         newUser = await User.create({
@@ -69,8 +69,7 @@ const signUp = async(req, res) => {
     res.json({
         accessToken,
         email:newUser.email,
-        fName:newUser.fName,
-        lName:newUser.lName,
+        name: newUser.name
 
     });
     
