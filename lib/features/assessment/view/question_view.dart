@@ -8,17 +8,14 @@ import 'package:novira_app/features/assessment/manager/question_cubit/question_c
 import 'package:novira_app/features/assessment/view/widgets/question_view_body.dart';
 
 class QuestionView extends StatelessWidget {
-  const QuestionView({super.key, required this.moodMap});
-  final Map<String, dynamic> moodMap;
+  const QuestionView({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
           QuestionCubit(AssessementRepoImpl(ApiService(Dio())))
             ..fetchQuestions(),
-      child: GradientScaffold(
-        body: SafeArea(child: QuestionViewBody(moodMap: moodMap)),
-      ),
+      child: const GradientScaffold(body: SafeArea(child: QuestionViewBody())),
     );
   }
 }

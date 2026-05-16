@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/providers/language_provider/language_provider.dart';
+import 'package:novira_app/core/providers/mood_provider/mood_provider.dart';
 import 'package:novira_app/generated/l10n.dart';
 import 'package:novira_app/simple_bloc_observer.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +12,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = SimpleBlocObserver();
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => LanguageProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => MoodProvider()),
+      ],
       child: const StartupShell(),
     ),
   );

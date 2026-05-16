@@ -8,8 +8,7 @@ import 'package:novira_app/features/auth/views/widgets/user_input.dart';
 import 'package:novira_app/generated/l10n.dart';
 
 class UserInputsSection extends StatefulWidget {
-  const UserInputsSection({super.key, required this.moodMap});
-  final Map<String, dynamic> moodMap;
+  const UserInputsSection({super.key});
   @override
   State<UserInputsSection> createState() => _UserInputsSectionState();
 }
@@ -81,7 +80,7 @@ class _UserInputsSectionState extends State<UserInputsSection> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                context.push(AppRouter.kVerifyEmailView, extra: widget.moodMap);
+                context.push(AppRouter.kVerifyEmailView);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

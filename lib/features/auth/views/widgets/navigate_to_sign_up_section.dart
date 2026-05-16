@@ -6,9 +6,7 @@ import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/generated/l10n.dart';
 
 class NavigateToSignUpSection extends StatelessWidget {
-  const NavigateToSignUpSection({super.key, required this.moodMap});
-
-  final Map<String, dynamic> moodMap;
+  const NavigateToSignUpSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,7 @@ class NavigateToSignUpSection extends StatelessWidget {
         const Text(' '),
         GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(AppRouter.kSignUpView, extra: moodMap);
+            GoRouter.of(context).push(AppRouter.kSignUpView);
           },
           child: Text(
             S.of(context).signUp,

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:novira_app/features/splash/manager/mood_provider/mood_provider.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_actions.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_header.dart';
 import 'package:novira_app/features/splash/views/widgets/onboarding_card_mood_check_in.dart';
-import 'package:provider/provider.dart';
 
 class OnboardingCard extends StatefulWidget {
   const OnboardingCard({super.key});
@@ -56,37 +54,34 @@ class _OnboardingCardState extends State<OnboardingCard>
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MoodProvider(),
-      child: OnboardingCardBody(
-        body: Column(
-          children: [
-            FadeTransition(
-              opacity: headerAnimation,
-              child: const OnboardingCardHeader(),
+    return OnboardingCardBody(
+      body: Column(
+        children: [
+          FadeTransition(
+            opacity: headerAnimation,
+            child: const OnboardingCardHeader(),
+          ),
+
+          const SizedBox(height: 28),
+
+          FadeTransition(
+            opacity: moodGridAnimation,
+            child: SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0, 0.2),
+                end: Offset.zero,
+              ).animate(moodGridAnimation),
+              child: const OnboardingCardMoodCheckIn(),
             ),
+          ),
 
-            const SizedBox(height: 28),
+          const SizedBox(height: 12),
 
-            FadeTransition(
-              opacity: moodGridAnimation,
-              child: SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0, 0.2),
-                  end: Offset.zero,
-                ).animate(moodGridAnimation),
-                child: const OnboardingCardMoodCheckIn(),
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            FadeTransition(
-              opacity: actionsAnimation,
-              child: const OnboardingCardActions(),
-            ),
-          ],
-        ),
+          FadeTransition(
+            opacity: actionsAnimation,
+            child: const OnboardingCardActions(),
+          ),
+        ],
       ),
     );
   }

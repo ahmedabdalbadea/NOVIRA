@@ -9,9 +9,7 @@ import 'package:novira_app/features/splash/views/widgets/onboarding_card_body.da
 import 'package:novira_app/generated/l10n.dart';
 
 class LogInViewBody extends StatelessWidget {
-  const LogInViewBody({super.key, required this.moodMap});
-
-  final Map<String, dynamic> moodMap;
+  const LogInViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +30,11 @@ class LogInViewBody extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
-              LogInUserInputsSection(moodMap: moodMap),
+              const LogInUserInputsSection(),
               const SizedBox(height: 22),
               const SocialAuthSection(),
               const SizedBox(height: 24),
-              NavigateToSignUpSection(moodMap: moodMap),
+              const NavigateToSignUpSection(),
             ],
           ),
         ),

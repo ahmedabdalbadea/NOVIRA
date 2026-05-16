@@ -11,7 +11,13 @@ class SelectorMoodList extends StatefulWidget {
 }
 
 class _SelectorMoodListState extends State<SelectorMoodList> {
-  int _currentIndex = 0;
+  late int _currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.moodIndex.clamp(0, AssetsData.kMoodsList.length - 3);
+  }
 
   @override
   Widget build(BuildContext context) {

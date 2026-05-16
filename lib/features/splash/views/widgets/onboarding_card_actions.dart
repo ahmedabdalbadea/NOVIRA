@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
 import 'package:novira_app/core/utils/app_router.dart';
-import 'package:novira_app/core/utils/assets_data.dart';
 import 'package:novira_app/core/utils/functions/show_snack_bar_error.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
-import 'package:novira_app/features/splash/manager/mood_provider/mood_provider.dart';
+import 'package:novira_app/core/providers/mood_provider/mood_provider.dart';
 import 'package:novira_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
@@ -56,10 +55,7 @@ class OnboardingCardActions extends StatelessWidget {
     if (mood.selectedMood == null) {
       showSnackBarError(context, S.of(context).pleaseSelectMood);
     } else {
-      GoRouter.of(context).push(
-        location,
-        extra: {"mood": mood.selectedMood, "index": mood.selectedItemIndex},
-      );
+      GoRouter.of(context).push(location);
     }
   }
 }

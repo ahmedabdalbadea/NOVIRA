@@ -7,8 +7,7 @@ import 'package:novira_app/features/assessment/view/widgets/question_loading_ind
 import 'package:novira_app/features/assessment/view/widgets/question_stepper_content.dart';
 
 class QuestionViewBody extends StatelessWidget {
-  const QuestionViewBody({super.key, required this.moodMap});
-  final Map<String, dynamic> moodMap;
+  const QuestionViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<QuestionCubit, QuestionState>(
@@ -25,7 +24,9 @@ class QuestionViewBody extends StatelessWidget {
         if (state is QuestionCompleted) {
           final cubit = context.read<QuestionCubit>();
           final maxScore = (cubit.questionModel?.questions.length ?? 1) * 3;
-          final totalQuestions = cubit.questionModel?.metadata.totalQuestions ?? (cubit.questionModel?.questions.length ?? 0);
+          final totalQuestions =
+              cubit.questionModel?.metadata.totalQuestions ??
+              (cubit.questionModel?.questions.length ?? 0);
           final assessmentType = cubit.questionModel?.metadata.type ?? '';
 
           context.go(
