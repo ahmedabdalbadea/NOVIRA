@@ -7,6 +7,8 @@ class AiChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(body: AiChatViewBody());
+    return GradientScaffold(
+      body: SafeArea(top: false, child: AiChatViewBody()),
+    );
   }
 }
