@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:novira_app/constants.dart';
+import 'package:novira_app/core/utils/app_router.dart';
 import 'package:novira_app/core/utils/styles.dart';
 import 'package:novira_app/core/widgets/custom_elevated_button.dart';
 import 'package:novira_app/features/home/view/widgets/ai_icon.dart';
@@ -39,6 +41,9 @@ class AiCard extends StatelessWidget {
                     kEndSecGradientColor,
                   ],
                   title: "Start Chat",
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.kAiChatView);
+                  },
                 ),
               ),
             ],
