@@ -7,6 +7,7 @@ import 'package:novira_app/features/auth/views/forgot_password_view.dart';
 import 'package:novira_app/features/auth/views/log_in_view.dart';
 import 'package:novira_app/features/auth/views/sign_up_view.dart';
 import 'package:novira_app/features/auth/views/verify_email_view.dart';
+import 'package:novira_app/features/home/view/ai_chat_view.dart';
 import 'package:novira_app/features/home/view/home_view.dart';
 import 'package:novira_app/features/splash/views/splash_view.dart';
 
@@ -19,6 +20,8 @@ abstract class AppRouter {
   static const kQuestionView = '/questionView';
   static const kResultView = '/resultView';
   static const kHomeView = '/homeView';
+  static const kAiChatView = '/aiChatView';
+
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -111,6 +114,16 @@ abstract class AppRouter {
           return navigateWithSlidingAnimation(
             key: state.pageKey,
             child: const HomeView(),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: kAiChatView,
+        pageBuilder: (context, state) {
+          return navigateWithSlidingAnimation(
+            key: state.pageKey,
+            child: const AiChatView(),
           );
         },
       ),
