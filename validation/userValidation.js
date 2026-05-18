@@ -1,4 +1,4 @@
-const { body, matchedData, validationResult} = require('express-validator');
+import { body, matchedData, validationResult } from 'express-validator';
 
 const validationRules = [
     body('email').isEmail().trim().withMessage('Email Must Be Valid!'),
@@ -11,9 +11,8 @@ const validationRules = [
 const validationRulesLogin = [
     validationRules[0], validationRules[1]
 ];
-/** 
-* @type {import('express').RequestHandler}
-*/
+
+
 const validateInput = (req, res, next) => {
     const result = validationResult(req);
         if(!result.isEmpty()){
@@ -29,6 +28,6 @@ const validateInput = (req, res, next) => {
     next();
 }
 
-module.exports = {
+export default {
     validateInput, validationRules, validationRulesLogin
 }

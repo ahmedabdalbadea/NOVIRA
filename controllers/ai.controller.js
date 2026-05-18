@@ -1,18 +1,17 @@
-// controllers/ai.controller.js
+import { OpenAI } from 'openai';
+import { env } from "../configurations/env.js";
 
-const {OpenAI} = require('openai');
-
-class AiController {
+export class AiController {
     constructor() {
         this.aiClient = new OpenAI({
             baseURL: "https://openrouter.ai/api/v1",
-            apiKey: process.env.API_KEY   // your OpenRouter key in .env
+            apiKey: env.API_KEY
         });
     }
 
     async sendPrompt(prompt) {
         const response = await this.aiClient.chat.completions.create({
-            model: "deepseek/deepseek-chat",   // DeepSeek on OpenRouter
+            model: "deepseek/deepseek-chat",
             messages: [
                 { role: "user", content: prompt }
             ]
@@ -29,5 +28,3 @@ class AiController {
         return response.choices[0].message.content;
     }
 }
-
-module.exports = AiController;

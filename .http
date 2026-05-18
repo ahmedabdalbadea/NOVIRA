@@ -1,0 +1,37 @@
+### POST USER
+POST http://localhost:5000/auth/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "alihosamtmara@example.com",
+    "password": "newUserWithGoodPassword#123"
+}
+
+### LOGIN USER
+POST http://localhost:5000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "alihosamtmara@example.com",
+    "password": "newUserWithGoodPassword#123"
+}
+
+### LOGOUT USER
+POST http://localhost:5000/auth/logout HTTP/1.1
+
+### GET ASSESSMENT QUESTIONS
+GET http://localhost:5000/users/assessment?lang=ar HTTP/1.1
+
+### GET SCORE
+GET http://localhost:5000/users/assessment/getScore HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjZhMDllODY3Mjg5ZmVjMWQ2ODE3YjA4YyJ9LCJpYXQiOjE3NzkwMzQzNDcsImV4cCI6MTc3OTAzNTI0N30.ByfvwKA5P_UDaNPIU12o23PoTq3a09ynRx3-IqLgMqA
+
+### POST UPDATE SCORE
+POST http://localhost:5000/users/assessment/updateScore HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjZhMDllODY3Mjg5ZmVjMWQ2ODE3YjA4YyJ9LCJpYXQiOjE3NzkwMzQzNDcsImV4cCI6MTc3OTAzNTI0N30.ByfvwKA5P_UDaNPIU12o23PoTq3a09ynRx3-IqLgMqA
+Content-Type: application/json
+
+{
+    "score": 85
+}
