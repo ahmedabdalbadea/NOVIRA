@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-const verifyJWT = (req, res, next) => {
+export const verifyJWT = (req, res, next) => {
     // 1. Try to get token from cookies first
     // Use the same name you used in res.cookie("jwt", ...)
     let token = req.cookies.jwt;
@@ -24,5 +24,3 @@ const verifyJWT = (req, res, next) => {
         next();
     });
 };
-
-module.exports = verifyJWT;

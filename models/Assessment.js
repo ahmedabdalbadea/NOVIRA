@@ -1,4 +1,3 @@
-
 const AssessmentQuestionsEN = [
     {
       "desc": "Assessing core interest levels and daily engagement.",
@@ -205,8 +204,4 @@ const AssessmentQuestionsAR = [
     }
   ]
 
-
-
-  module.exports = {
-    AssessmentQuestionsAR, AssessmentQuestionsEN
-  }
+export { AssessmentQuestionsAR, AssessmentQuestionsEN };
